@@ -105,6 +105,8 @@
 |prep_date|string|null: false|
 |size|references|foreign_key: true|
 |shipping_fee|integer|null: false|
+|prefecture_code|integer|null: false|
+|postage_payer|string|null: false|
 ### Association
 - has_many :photos, dependent: :destroy
 - has_many :comments, dependent: :destroy
