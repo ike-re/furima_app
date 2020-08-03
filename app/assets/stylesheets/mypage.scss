@@ -1,3 +1,4 @@
+@import "variables";
 .wrapper{
   height: 100vh;
   display: flex;
@@ -20,20 +21,20 @@
       .ItemLeft{
         list-style: none;
         display: block;
-        border: 2px solid #fff;
+        border: 2px solid $color_item1;
         box-shadow: 0 0 0 2px #eee;
         padding: 16px;
         &__profile{
           text-decoration: none;
-          color: #000;
+          color: $color_item5;
         }
         &__credit{
           text-decoration: none;
-          color: #000;
+          color: $color_item5;
         }
         &__logout{
           text-decoration: none;
-          color: #000;
+          color: $color_item5;
         }
       }
     }
@@ -57,18 +58,18 @@
       .ItemRight{
         list-style: none;
         display: block;
-        border: 2px solid #fff;
+        border: 2px solid $color_item1;
         box-shadow: 0 0 0 2px #eee;
         padding: 16px;
         margin-top: 50px;
         margin-bottom: 70px;
         &__sell{
           text-decoration: none;
-          color: #000;
+          color: $color_item5;
         }
         &__buyhistory{
           text-decoration: none;
-          color: #000;
+          color: $color_item5;
         }
       }
     }

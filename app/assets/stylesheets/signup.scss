@@ -1,20 +1,16 @@
-$color-item1: #fff;
-$color-item2: #f8f8f8;
-$color-item3: #3ccace;
-
+@import "variables";
 .SignupPage {
-  box-sizing: border-box;
-  background-color: $color-item2;
+  background-color: $color_item2;
   .Signup-header {
-    background-color: $color-item1;
+    background-color: $color_item1;
   }
   .Signup-main {
-    background-color: $color-item2;
+    background-color: $color_item2;
     height: 100%;
     width: 100vw;
 
     &__information {
-      background-color: $color-item1;
+      background-color: $color_item1;
       width: 600px;
       margin: 50px auto;
       padding-bottom: 50px;
@@ -22,7 +18,7 @@ $color-item3: #3ccace;
         height: 30px;
         font-size: 20px;
         text-align: center;
-        border-bottom: 1px $color-item2 solid;
+        border-bottom: 1px $color_item2 solid;
         padding: 15px;
         font-weight: bolder;
       }
@@ -75,15 +71,15 @@ $color-item3: #3ccace;
               height: 40px;
             }
             &__require {
-              background-color: $color-item3;
-              border: solid 1px $color-item3;
-              color: $color-item1;
+              background-color: $color_item3;
+              border: solid 1px $color_item3;
+              color: $color_item1;
             }
             .SignUp-btn {
               width: 280px;
               height: 40px;
-              background-color: $color-item3;
-              color: $color-item1;
+              background-color: $color_item3;
+              color: $color_item1;
             }
           }
         }

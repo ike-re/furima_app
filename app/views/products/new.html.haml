@@ -1,0 +1,92 @@
+.ProductsNew
+  .ProductsNew__header
+  .ProductsNew__main
+    = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
+      = render 'devise/shared/error_messages', resource: @product
+      .ProductsNew__main__form__group
+        = product.fields_for :photos, @photos do |photo|
+          .ProductsNew__main__form__group__field
+            %label.field-label 出品画像
+            %span 必須
+            %h3 最大10枚までアップロードできます
+            .ProductsNew__main__form__group__field__file-input
+              #files
+                = photo.file_field :image, id: "filearea", class: "fileinput fileinput0"
+                %label{class: "file-label", for: "filearea"}
+                  = icon('fa', 'camera')
+                  %p クリックしてファイルをアップロード
+
+      .ProductsNew__main__form__group
+        .ProductsNew__main__form__group__field
+          = product.label '商品名', class: "field-label"
+          %span 必須
+          .ProductsNew__main__form__group__field__input
+            = product.text_field :name, placeholder: '40文字まで'
+        .ProductsNew__main__form__group__field
+          = product.label '商品の説明', class: "field-label"
+          %span 必須
+          .ProductsNew__main__form__group__field__input
+            = product.text_area :introduction, maxlength: "1000", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+      .ProductsNew__main__form__group
+        .ProductsNew__main__form__group__field
+          %p 商品の詳細
+          = product.label 'カテゴリー', class: "field-label"
+          %span 必須
+          .ProductsNew__main__form__group__field__category-input
+            = product.collection_select :category_id, @parents, :id, :name, {prompt: '---'}, {id: 'category_parent'}
+        .ProductsNew__main__form__group__field#size-field
+          = product.label 'サイズ', class: "field-label"
+          %span 必須
+          .ProductsNew__main__form__group__field__input
+            = product.collection_select :size_id, Size.all, :id, :name, prompt: '---'
+        .ProductsNew__main__form__group__field   
+          = product.fields_for :brand, @brand do |brand|
+            = brand.label "ブランド", class: "field-label"
+            %span.optional 任意
+            .ProductsNew__main__form__group__field__input
+              = brand.text_field :name, placeholder: '例) シャネル'
+        .ProductsNew__main__form__group__field
+          = product.label '商品の状態', class: "field-label"
+          %span 必須
+          .ProductsNew__main__form__group__field__input
+            = product.collection_select :condition_id, Condition.all, :id, :name, prompt: '---'
+          
+        .ProductsNew__main__form__group
+          .ProductsNew__main__form__group__field
+            %p
+              配送について
+              = link_to '？', '#', class: "help"
+            = product.label '配送料の負担', class: "field-label"
+            %span 必須
+            .ProductsNew__main__form__group__field__input
+              = product.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: '---'
+          .ProductsNew__main__form__group__field
+            = product.label '発送元の地域', class: "field-label"
+            %span 必須
+            .ProductsNew__main__form__group__field__input
+              = product.select :prefecture_code, Product.prefecture_codes.keys.to_a, prompt: '---'
+          .ProductsNew__main__form__group__field
+            = product.label '発送までの日数', class: "field-label"
+            %span 必須
+            .ProductsNew__main__form__group__field__input
+              = product.collection_select :prep_date_id, PrepDate.all, :id, :name, prompt: '---'
+
+        .ProductsNew__main__form__group
+          .ProductsNew__main__form__group__field
+            %p
+              価格(￥300〜9,999,999)
+              = link_to '？', '#', class: "help"
+            .ProductsNew__main__form__group__field__price-input
+              .ProductsNew__main__form__group__field__price-input__label
+                = product.label '販売価格', class: "field-label"
+                %span 必須
+              .ProductsNew__main__form__group__field__price-input__value
+                %span.price ￥
+                = product.number_field :price, placeholder: "0"
+          .ProductsNew__main__form__group__field
+            .ProductsNew__main__form__group__field__button
+              = product.submit '出品する'
+          .ProductsNew__main__form__group__field__link
+            = link_to 'もどる', '#'
+  .ProductsNew__footer

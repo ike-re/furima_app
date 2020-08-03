@@ -12,6 +12,6 @@ class User < ApplicationRecord
   validates :first_name_kana, :family_name_kana,
             format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birth_date, format: { with: /\A\d{1,4}(\/|-)\d{1,2}\1\d{1,2}\z/ }
+  has_many :selling_products, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Product"
   has_one :deliver_address, dependent: :destroy
-  # accepts_nested_attributes_for :deliver_address
 end

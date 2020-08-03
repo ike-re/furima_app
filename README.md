@@ -92,29 +92,32 @@
 ## Productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|price|integer|null: false|
 |name|string|null: false|
 |introduction|text|null: false|
-|condition|references|null: false, foreign_key: true|
+|size_id|integer|null: false|
 |brand|references|foreign_key: true|
-|category|references|foreign_key: true|
-|seller|references|null: false, foreign_key: true|
-|buyer|references|null: false, foreign_key: true|
-|trading_status|enum|null: false|
+|condition_id|integer|null: false|
+|postage_payer_id|integer|null: false|
+|prefecture_code|integer(enum)|null: false|
+|prep_date_id|integer|null: false|
+|price|integer|null: false|
+|trading_status|integer(enum)|null: false, default: 1|
 |closed_deal_date|string|
-|prep_date|string|null: false|
-|size|references|foreign_key: true|
-|shipping_fee|integer|null: false|
+|seller_id|integer|null: false|
+|buyer_id|integer||
 ### Association
 - has_many :photos, dependent: :destroy
 - has_many :comments, dependent: :destroy
 - has_many :favorites, dependent: :destroy
 - has_many :users, through: :favorites
+- has_many :categories_products, dependent: :destroy
+- has_many :categories, through: :categories_products
 - has_one :user_evaluation
-- belongs_to :category
 - belongs_to :brand
 - belongs_to_active_hash :size
 - belongs_to_active_hash :condition
+- belongs_to_active_hash :postage_payer
+- belongs_to_active_hash :prep_date
 - belongs_to :seller, class_name :"User"
 - belongs_to :buyer, class_name :"User"
 
@@ -142,7 +145,17 @@
 |name|string|null: false|
 |ancestry|string||
 ### Association
-- has_many :products
+- has_many :categories_products, dependent: :destroy
+- has_many :products, through: :categories_products
+
+## Categories_Productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|references|foreign_key: true|
+|product|references|foreign_key: true|
+### Association
+- belongs_to :category
+- belongs_to :product
 
 
 

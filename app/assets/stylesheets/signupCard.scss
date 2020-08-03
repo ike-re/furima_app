@@ -1,0 +1,55 @@
+$color-item1: white;
+$color-item2: whitesmoke;
+$color-item3: #3ccace;
+
+.SignupCard {
+  box-sizing: border-box;
+  &__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    &__body {
+      background-color: $color-item2;
+      padding: 30px;
+      &__title {
+        border-bottom-style: ridge;
+        text-align: center;
+      }
+      &__input {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        &__form {
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+  .notify {
+    background-color: $color-item3;
+    color: $color-item1;
+    margin-left: 3px;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+  }
+  .SignUp-btn {
+    width: 350px;
+    height: 40px;
+    margin-top: 50px;
+    background-color: $color-item3;
+    color: $color-item1;
+    cursor: pointer;
+  }
+  .input {
+    padding: 8px;
+    width: 320px;
+  }
+  .input_half{
+    padding: 8px;
+    width: 150px;
+  }
+
+}

@@ -8,12 +8,12 @@
         設定
       %li.ItemLeft
         = link_to "#",class: "ItemLeft__profile" do
-          プロフフィール
+          プロフィール
       %li.ItemLeft
-        = link_to "#",class: "ItemLeft__credit" do
+        = link_to credit_cards_path, method: :post, class: "ItemLeft__credit" do
           クレジットカードの登録
       %li.ItemLeft
-        = link_to "#", class: "ItemLeft__logout" do
+        = link_to destroy_user_session_path, method: :delete, class: "ItemLeft__logout" do
           ログアウト
   .wrapper__Right
     .Icon
@@ -22,7 +22,7 @@
       sample
     %ul.Item
       %li.ItemRight
-        = link_to "#", class: "ItemRight__sell" do
+        = link_to new_product_path, class: "ItemRight__sell" do
           出品する
       %li.ItemRight
         = link_to "#", class: "ItemRight__buyhistory" do
