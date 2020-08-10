@@ -9,6 +9,7 @@ class Product < ApplicationRecord
   validates :introduction, length: { maximum: 1000}
   validates :price, numericality: { only_integer:true, greater_than_or_equal_to:300, less_than_or_equal_to:9999999}
   has_many :photos, dependent: :destroy
+  has_many :comments, dependent: :destroy
   belongs_to :brand, optional: true
   belongs_to :seller, class_name: 'User', optional: true
   belongs_to :buyer, class_name: 'User', optional: true
