@@ -1,0 +1,21 @@
+@import "variables";
+
+.paid_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  text-align: center;
+  &__message {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+}
+.link {
+  text-decoration: none;
+  color: $color_item2;
+  background-color: $color_item3;
+  font-size: 30px;
+  padding: 1rem;
+  cursor: pointer;
+}

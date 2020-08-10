@@ -1,23 +1,19 @@
-$color-item1: white;
-$color-item2: whitesmoke;
-$color-item3: #3ccace;
-
+@import "variables";
 .LoginPages {
-  box-sizing: border-box;
-  background-color: $color-item2;
+  background-color: $color_item2;
   height: 100%;
   width: 100vw;
   .Login-header {
     width: 100vw;
     height: 100px;
     padding-bottom: 50px;
-    background-color: $color-item1;
+    background-color: $color_item1;
   }
   .Login-main {
     height: 900px;
     width: 100vw;
     &__information {
-      background-color: $color-item1;
+      background-color: $color_item1;
       width: 380px;
       height: 600px;
       margin: auto;
@@ -26,7 +22,7 @@ $color-item3: #3ccace;
         height: 30px;
         font-size: 20px;
         text-align: center;
-        border-bottom: 1px $color-item2 solid;
+        border-bottom: 1px $color_item2 solid;
         padding: 15px;
         font-weight: bolder;
       }
@@ -45,8 +41,8 @@ $color-item3: #3ccace;
           margin-top: 40px;
         }
         .Login-btn {
-          color: $color-item1;
-          background-color: $color-item3;
+          color: $color_item1;
+          background-color: $color_item3;
           width: 308px;
           height: 56px;
           border-radius: 5px;
@@ -56,7 +52,7 @@ $color-item3: #3ccace;
           height: 30px;
           font-size: 15px;
           text-align: center;
-          border-bottom: 1px $color-item2 solid;
+          border-bottom: 1px $color_item2 solid;
           margin-top: 40px;
         }
         .SignupBtn {
@@ -66,7 +62,7 @@ $color-item3: #3ccace;
           border-radius: 5px;
           margin-top: 25px;
           &__btn {
-            color: $color-item1;
+            color: $color_item1;
             text-decoration: none;
           }
         }

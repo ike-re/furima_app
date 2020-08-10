@@ -1,0 +1,31 @@
+.wrapper
+  .wrapper__Left
+    .Title
+      .Title__mypage
+        マイページ
+    %ul.Item
+      .ItemText
+        設定
+      %li.ItemLeft
+        = link_to "#",class: "ItemLeft__profile" do
+          プロフィール
+      %li.ItemLeft
+        - if @card.blank?
+          = link_to 'クレジットカードの登録', new_credit_card_path, method: :get, class: "ItemLeft__credit"
+        - else
+          = link_to 'クレジットカードの詳細', url: '/credit_cards/:id'
+      %li.ItemLeft
+        = link_to 'クレジットカードの編集・削除', credit_card_path(@card), method: :get, class: "ItemLeft__credit"
+      %li.ItemLeft
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "ItemLeft__logout"
+  .wrapper__Right
+    .Icon
+      = image_tag 'cat.jpg', alt: 'img', height: '100px', width: '100px', class: "Icon__img"
+    .nickname
+      = @user.nickname
+    %ul.Item
+      %li.ItemRight
+        = link_to '出品する', new_product_path, class: "ItemRight__sell"
+      %li.ItemRight
+        = link_to "#", class: "ItemRight__buyhistory" do
+          購入した商品

@@ -13,5 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+}
+@import "modules/products";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "reset";
 @import "signup";
 @import "signin";
+@import "products_new";
+@import "signupCard";
+@import "showCard";

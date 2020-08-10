@@ -1,0 +1,16 @@
+.Card
+  .Card__body 
+    %p 登録中のカード
+    .Card__body__details
+      - if @card.blank?
+        登録しているカードはありません
+      - else 
+        %ul 
+        = "カード番号：**** **** **** #{@card_information.last4}"
+        %br
+        = "有効期限：#{@card_information.exp_month.to_s} / #{@card_information.exp_year.to_s.slice(2,3)}"
+    .Card__body__button
+      -if @card.blank?
+        = link_to '登録する', new_credit_card_path, method: :get
+      - else
+        = link_to '削除する', delete_credit_cards_path, method: :post, class: "button"

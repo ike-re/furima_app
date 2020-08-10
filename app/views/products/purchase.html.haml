@@ -1,0 +1,99 @@
+.ProductsPurchase
+  %header.ProductsNew__header
+    = link_to image_tag('logo.png'), products_path
+  .ProductsPurchase__main
+
+    .ProductsPurchase__main__group
+      %h2 購入内容の確認
+
+    .ProductsPurchase__main__group
+      .ProductsPurchase__main__group__product-field
+        = image_tag @product.photos.first.image.url
+        .ProductsPurchase__main__group__product-field__info
+          %p
+            = @product.name
+          .ProductsPurchase__main__group__product-field__info__price
+            - if @product.postage_payer_id == 1
+              %p
+              送料込み(税込)
+              %span.yen
+                = "￥#{@product.price}"
+            - else
+              %p
+              着払い(税込)
+              %span.yen
+                = "￥#{@product.price}"
+
+    .ProductsPurchase__main__group
+      .ProductsPurchase__main__group__price-field
+        %ul
+          %li 支払い金額
+          %li
+            = "￥#{@product.price}"
+      .ProductsPurchase__main__group__point-field
+        .ProductsPurchase__main__group__point-field__icon
+          %span.square
+          = icon('fa','dice-d6')
+          %p ポイントの使用
+        .ProductsPurchase__main__group__point-field__value
+          %p 所持ポイント：P0
+
+    .ProductsPurchase__main__group
+      .ProductsPurchase__main__group__card-field
+        .ProductsPurchase__main__group__card-field__payment
+          %p 支払い方法
+          = link_to '#' do
+            変更する
+            %span >
+        .ProductsPurchase__main__group__card-field__info
+          %p <カード情報> 
+          カード番号：
+          = "**** **** **** #{@card_information.last4}"
+          %br
+          有効期限：
+          = "#{@card_information.exp_month.to_s} / #{@card_information.exp_year.to_s.slice(2,3)}"
+          %br
+          - if @card.blank?
+            = link_to new_credit_card_path do
+              = icon('fa', 'plus-circle')
+              ここから登録してください
+
+    .ProductsPurchase__main__group
+      .ProductsPurchase__main__group__deliver-field
+        .ProductsPurchase__main__group__deliver-field__link
+          %p 配送先
+          = link_to '#' do
+            変更する
+            %span >
+        .ProductsPurchase__main__group__deliver-field__address
+          %p
+            = "〒 #{@deliver_address.post_code}"
+          - if @deliver_address.building_name.nil?
+            %p
+              = "#{@deliver_address[:prefecture_code]} #{@deliver_address.city} #{@deliver_address.house_number}"
+          - else
+            %p
+              = "#{@deliver_address[:prefecture_code]} #{@deliver_address.city} #{@deliver_address.house_number} #{@deliver_address.building_name}"
+          %p
+            = "#{@deliver_address.destination_family_name} #{@deliver_address.destination_first_name}"
+    .ProductsPurchase__main__button-group
+      - if @card.blank?
+        %p 支払い方法の入力を完了してください。
+      .ProductsPurchase__main__button-group__field
+        - if @product.buyer_id.present?
+          = link_to '売り切れました', pay_product_path, class: "disabled-button"
+        - else 
+          = link_to '購入する', pay_product_path, class: "button"
+  %footer.ProductsNew__footer
+    .ProductsNew__footer__links
+      %ul
+        %li
+          = link_to 'プライバシーポリシー', '#'
+        %li
+          = link_to 'furima利用規約', '#'
+        %li
+          = link_to '特定商取引に関する表記', '#'
+    .ProductsNew__footer__logo
+      = link_to image_tag('logo-white.png'), products_path
+    .ProductsNew__footer__caption
+      %p © Furima, Inc.

@@ -1,0 +1,2859 @@
+.serch-header
+  .serch-header__headermain
+    .serch-header__headermain__header-list
+      .serch-header__headermain__header-list__icon
+        = link_to products_path, class: 'logo' do
+          = image_tag "logo.png"
+      .serch-header__headermain__header-list__searchBox
+        = form_with(url: "#", local: true, method: :get) do |form|
+          = form.text_field :keyword, placeholder: "キーワードから探す", class: "searchBox-input"
+        %button{type: "submit"}
+          .search-btn
+            = image_tag ("icon-search 1.png")
+    .serch-header__headermain__nav
+      %ul.left-items
+        %li.left-item
+          = link_to "カテゴリー", "#" , class: 'item-btn' 
+          %ul
+            %li
+              = link_to "レディース" , "#"
+              %ul
+                %li
+                  = link_to "トップス" , "#"
+                  %ul
+                    %li
+                      = link_to "Tシャツ/カットソー(半袖/袖なし)" , "#"
+                    %li
+                      = link_to "Tシャツ/カットソー(七分/長袖)" , "#"
+                    %li
+                      = link_to "シャツ/ブラウス(半袖/袖なし)" , "#"
+                    %li
+                      = link_to "シャツ/ブラウス(七部/長袖)" , "#"
+                    %li
+                      = link_to "ポロシャツ" , "#"
+                    %li
+                      = link_to "キャミソール" , "#"
+                    %li
+                      = link_to "タンクトップ" , "#"
+                    %li
+                      = link_to "ホルターネック" , "#"
+                    %li
+                      = link_to "ニット/セーター" , "#"
+                    %li
+                      = link_to "チュニック" , "#"
+                    %li
+                      = link_to "カーディガン/ボレロ" , "#"
+                    %li
+                      = link_to "アンサブル" , "#"
+                    %li
+                      = link_to "ベスト/ジレ" , "#"
+                    %li
+                      = link_to "パーカー" , "#"
+                    %li
+                      = link_to "トレーナー/スウェット" , "#"
+                    %li
+                      = link_to "ベアトップ/チューブトップ" , "#"
+                    %li
+                      = link_to "ジャージ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "ジャケット/アウター" , "#"
+                  %ul
+                    %li
+                      = link_to "テーラードジャケット" , "#"
+                    %li
+                      = link_to "ノーカラージャケット" , "#"
+                    %li
+                      = link_to "Gジャン/デニム" , "#"
+                    %li
+                      = link_to "レザージャケット" , "#"
+                    %li
+                      = link_to "ダウンジャケット" , "#"
+                    %li
+                      = link_to "ライダースジャケット" , "#"
+                    %li
+                      = link_to "ミリタリージャケット" , "#"
+                    %li
+                      = link_to "ダウンベスト" , "#"
+                    %li
+                      = link_to "ジャンパー/ブルゾン" , "#"
+                    %li
+                      = link_to "ポンチョ" , "#"
+                    %li
+                      = link_to "ロングコート" , "#"
+                    %li
+                      = link_to "トレンチコート" , "#"
+                    %li
+                      = link_to "ダッフルコート" , "#"
+                    %li
+                      = link_to "ピーコート" , "#"
+                    %li
+                      = link_to "チェスターコート" , "#"
+                    %li
+                      = link_to "モッズコート" , "#"
+                    %li
+                      = link_to "スタジャン" , "#"
+                    %li
+                      = link_to "毛皮/ファーコート" , "#"
+                    %li
+                      = link_to "スプリングコード" , "#"
+                    %li
+                      = link_to "スカジャン" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "パンツ" , "#"
+                  %ul
+                    %li
+                      = link_to "デニム/ジーンズ" , "#"
+                    %li
+                      = link_to "ショートパンツ" , "#"
+                    %li
+                      = link_to "カジュアルパンツ" , "#"
+                    %li
+                      = link_to "ハーフパンツ" , "#"
+                    %li
+                      = link_to "チノパン" , "#"
+                    %li
+                      = link_to "ワークパンツ/カーゴパンツ" , "#"
+                    %li
+                      = link_to "クロップドパンツ" , "#"
+                    %li
+                      = link_to "サロペット/オーバーオール" , "#"
+                    %li
+                      = link_to "オールインワン" , "#"
+                    %li
+                      = link_to "サルエルパンツ" , "#"
+                    %li
+                      = link_to "ガウチョパンツ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "スカート" , "#"
+                  %ul
+                    %li
+                      = link_to "ミニスカート" , "#"
+                    %li
+                      = link_to "膝丈スカート" , "#"
+                    %li
+                      = link_to "ロングスカート" , "#"
+                    %li
+                      = link_to "キュロット" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                    %li
+                      = link_to "ミニスカート" , "#"
+                    %li
+                      = link_to "膝丈スカート" , "#"
+                    %li
+                      = link_to "ロングスカート" , "#"
+                    %li
+                      = link_to "キュロット" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "ワンピース" , "#"
+                  %ul
+                    %li
+                      = link_to "ミニワンピース" , "#"
+                    %li
+                      = link_to "ひざ丈ワンピース" , "#"
+                    %li
+                      = link_to "ロングワンピース" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "靴" , "#"
+                  %ul
+                    %li
+                      = link_to "ハイヒール/パンプス" , "#"
+                    %li
+                      = link_to "ブーツ" , "#"
+                    %li
+                      = link_to "サンダル" , "#"
+                    %li
+                      = link_to "スニーカー" , "#"
+                    %li
+                      = link_to "ミュール" , "#"
+                    %li
+                      = link_to "モカシン" , "#"
+                    %li
+                      = link_to "ローファー/革靴" , "#"
+                    %li
+                      = link_to "フラッシュシューズ/バレエシューズ" , "#"
+                    %li
+                      = link_to "長靴/レインシューズ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "ルームウェア/パジャマ" , "#"
+                  %ul
+                    %li
+                      = link_to "ルームウェア" , "#"
+                    %li
+                      = link_to "パジャマ" , "#"
+                %li
+                  = link_to "レッグウェア" ,"#"
+                  %ul
+                    %li
+                      = link_to "ソックス" , "#"
+                    %li
+                      = link_to "スパッツ/レギンス" , "#"
+                    %li
+                      = link_to "ストッキング/タイツ" , "#"
+                    %li
+                      = link_to "レッグウォーマー" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "帽子" , "#"
+                  %ul
+                    %li
+                      = link_to "ニットキャップ/ビーニー" , "#"
+                    %li
+                      = link_to "ハット" , "#"
+                    %li
+                      = link_to "ハンチング/ベレー帽" , "#"
+                    %li
+                      = link_to "キャップ" , "#"
+                    %li
+                      = link_to "キャスケット" , "#"
+                    %li
+                      = link_to "麦わら帽子" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "バッグ" , "#"
+                  %ul
+                    %li
+                      = link_to "ハンドバッグ" , "#"
+                    %li
+                      = link_to "トートバッグ" , "#"
+                    %li
+                      = link_to "エコバッグ" , "#"
+                    %li
+                      = link_to "リュック/バックパック" , "#"
+                    %li
+                      = link_to "ボストンバック" , "#"
+                    %li
+                      = link_to "スポーツバック" , "#"
+                    %li
+                      = link_to "ショルダーバック" , "#"
+                    %li
+                      = link_to "クラッチバック" , "#"
+                    %li
+                      = link_to "ポーチ/バニティ" , "#"
+                    %li
+                      = link_to "ボディバック/ウエストバック" , "#"
+                    %li
+                      = link_to "マザーズバック" , "#" 
+                    %li
+                      = link_to "メッセンジャーバック" , "#"
+                    %li
+                      = link_to "ビジネスバック" , "#"
+                    %li
+                      = link_to "旅行用バック/キャリーバック" , "#"
+                    %li
+                      = link_to "ショップ袋" , "#"
+                    %li
+                      = link_to "和装用バッグ" , "#"
+                    %li
+                      = link_to "かごバック" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "アクセサリー" , "#"
+                  %ul
+                    %li
+                      = link_to "ネックレス" , "#"
+                    %li
+                      = link_to "ブレスレット" , "#"
+                    %li
+                      = link_to "バングル/リストバンド" , "#"
+                    %li
+                      = link_to "リング" , "#"
+                    %li
+                      = link_to "ピアス(片耳用)" , "#"
+                    %li
+                      = link_to "ピアス(両耳用)" , "#"
+                    %li
+                      = link_to "イヤリング" , "#"
+                    %li
+                      = link_to "アンクレット" , "#"
+                    %li
+                      = link_to "ブローチ/コサージュ" , "#"
+                    %li
+                      = link_to "チャーム" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "ヘアアクセサリー" , "#"
+                  %ul
+                    %li
+                      = link_to "ヘアゴム/シュシュ" , "#"
+                    %li
+                      = link_to "ヘアバンド/カチューシャ" , "#"
+                    %li
+                      = link_to "ヘアピン" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "小物" , "#"
+                  %ul
+                    %li
+                      = link_to "長財布" , "#"
+                    %li
+                      = link_to "折り財布" , "#"
+                    %li
+                      = link_to "コインケース/小銭入れ" , "#"
+                    %li
+                      = link_to "名刺入れ/定期入れ" , "#"
+                    %li
+                      = link_to "キーケース" , "#"
+                    %li
+                      = link_to "キーホルダー" , "#"
+                    %li
+                      = link_to "手袋/アームカバー" , "#"
+                    %li
+                      = link_to "ハンカチ" , "#"
+                    %li
+                      = link_to "ベルト" , "#"
+                    %li
+                      = link_to "マフラー/ショール" , "#"
+                    %li
+                      = link_to "ストール/スヌード" , "#"
+                    %li
+                      = link_to "バンダナ/スカーフ" , "#"
+                    %li
+                      = link_to "ネックウォーマー" , "#"
+                    %li
+                      = link_to "サスペンダー" , "#"
+                    %li
+                      = link_to "サングラス/メガネ" , "#"
+                    %li
+                      = link_to "モバイルケース/カバー" , "#"
+                    %li
+                      = link_to "手帳" , "#"
+                    %li
+                      = link_to "イヤーマフラー" , "#"
+                    %li
+                      = link_to "傘" , "#"
+                    %li
+                      = link_to "レインコート/ポンチョ" , "#"
+                    %li
+                      = link_to "ミラー" , "#"
+                    %li
+                      = link_to "タバコグッズ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "時計" , "#"
+                  %ul
+                    %li
+                      = link_to "腕時計(アナログ)" , "#"
+                    %li
+                      = link_to "腕時計(デジタル)" , "#"
+                    %li
+                      = link_to "ラバーベルト" , "#"
+                    %li
+                      = link_to "レザーベルト" , "#"
+                    %li
+                      = link_to "金属ベルト" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "ウィッグ/エクステ" , "#"
+                  %ul
+                    %li
+                      = link_to "前髪ウィッグ" , "#"
+                    %li
+                      = link_to "ロングストレート" , "#"
+                    %li
+                      = link_to "ロングカール" , "#"
+                    %li
+                      = link_to "ショートストレート" , "#"
+                    %li
+                      = link_to "ショートカール" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "浴衣/水着" , "#"
+                  %ul
+                    %li
+                      = link_to "浴衣" , "#"
+                    %li
+                      = link_to "着物" , "#"
+                    %li
+                      = link_to "振袖" , "#"
+                    %li
+                      = link_to "長襦袢/半襦袢" , "#"
+                    %li
+                      = link_to "水着セパレート" , "#"
+                    %li
+                      = link_to "水着ワンピース" , "#"
+                    %li
+                      = link_to "水着スポーツ用" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "スーツ/フォーマル/ドレス" , "#"
+                  %ul
+                    %li
+                      = link_to "スカートスーツ上下" , "#"
+                    %li
+                      = link_to "パンツスーツ上下" , "#"
+                    %li
+                      = link_to "ドレス" , "#"
+                    %li
+                      = link_to "パーティーシューズ" , "#"
+                    %li
+                      = link_to "シューズ" , "#"
+                    %li
+                      = link_to "ウエディング" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "マタニティー" , "#"
+                  %ul
+                    %li
+                      = link_to "トップス" , "#"
+                    %li
+                      = link_to "アウター" , "#"
+                    %li
+                      = link_to "インナー" , "#"
+                    %li
+                      = link_to "ワンピース" , "#"
+                    %li
+                      = link_to "パンツ/スパッツ" , "#"
+                    %li
+                      = link_to "スカート" , "#"
+                    %li
+                      = link_to "パジャマ" , "#"
+                    %li
+                      = link_to "授乳服" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "その他" , "#"
+                  %ul
+                    %li
+                      = link_to "コスプレ" , "#"
+                    %li
+                      = link_to "下着" , "#"
+                    %li
+                      = link_to "その他" , "#"
+          %ul
+            %li
+              = link_to "メンズ" , "#"
+              %ul
+                %li
+                  = link_to "トップス" , "#"
+                  %ul
+                    %li
+                      = link_to "Tシャツ/カットソー(半袖/袖なし)" , "#"
+                    %li
+                      = link_to "Tシャツ/カットソー(七分/長袖)" , "#"
+                    %li
+                      = link_to "シャツ" , "#"
+                    %li
+                      = link_to "ポロシャツ" , "#"
+                    %li
+                      = link_to "タンクトップ" , "#"
+                    %li
+                      = link_to "ニット/セーター" , "#"
+                    %li
+                      = link_to "パーカー" , "#"
+                    %li
+                      = link_to "カーディガン" , "#"
+                    %li
+                      = link_to "スウェット" , "#"
+                    %li
+                      = link_to "ジャージ" , "#"
+                    %li
+                      = link_to "ベスト" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "ジャケット/アウター" , "#"
+                  %ul
+                    %li
+                      = link_to "テーラードジャケット" , "#"
+                    %li
+                      = link_to "ノーカラージャケット" , "#"
+                    %li
+                      = link_to "Gジャン/デニムジャケット" , "#"
+                    %li
+                      = link_to "レザージャケット" , "#"
+                    %li
+                      = link_to "ダウンジャケット" , "#"
+                    %li
+                      = link_to "ライダースジャケット" , "#"
+                    %li
+                      = link_to "ミリタリージャケット" , "#"
+                    %li
+                      = link_to "ダウンジャケット" , "#"
+                    %li
+                      = link_to "ライダーズジャケット" , "#"
+                    %li
+                      = link_to "ミリタリージャケット" , "#"
+                    %li
+                      = link_to "ナイロンジャケット" , "#"
+                    %li
+                      = link_to "フライトジャケット" , "#"
+                    %li
+                      = link_to "ダッフルコート" , "#"
+                    %li
+                      = link_to "ピーコート" , "#"
+                    %li
+                      = link_to "ステントカラーコート" , "#"
+                    %li
+                      = link_to "トレンチコート" , "#"
+                    %li
+                      = link_to "チェスターコート" , "#"
+                    %li
+                      = link_to "スタジャン" , "#"
+                    %li
+                      = link_to "スカジャン" , "#"
+                    %li
+                      = link_to "ブルゾン" , "#"
+                    %li
+                      = link_to "マウンテンパーカー" , "#"
+                    %li
+                      = link_to "ダウンベスト" , "#"
+                    %li
+                      = link_to "ポンチョ" , "#"
+                    %li
+                      = link_to "カバーオール" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "パンツ" , "#"
+                  %ul
+                    %li
+                      = link_to "デニム/ジーンズ" , "#"
+                    %li
+                      = link_to "ワークパンツ/カーゴパンツ" , "#"
+                    %li
+                      = link_to "スラックス" , "#"
+                    %li
+                      = link_to "チノパン" , "#"
+                    %li
+                      = link_to "ショートパンツ" , "#"
+                    %li
+                      = link_to "ペインターパンツ" , "#"
+                    %li
+                      = link_to "サルエルパンツ" , "#"
+                    %li
+                      = link_to "オーバーオール" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "靴" , "#"
+                  %ul
+                    %li
+                      = link_to "スニーカー" , "#"
+                    %li
+                      = link_to "サンダル" , "#"
+                    %li
+                      = link_to "ブーツ" , "#"
+                    %li
+                      = link_to "モカシン" , "#"
+                    %li
+                      = link_to "ドレス/ビジネス" , "#"
+                    %li
+                      = link_to "長靴/レインシューズ" , "#"
+                    %li
+                      = link_to "デッキシューズ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "バッグ" , "#"
+                  %ul
+                    %li
+                      = link_to "ショルダーバック" , "#"
+                    %li
+                      = link_to "トートバック" , "#"
+                    %li
+                      = link_to "ボストンバック" , "#"
+                    %li
+                      = link_to "リュック/バックパック" , "#"
+                    %li
+                      = link_to "ウエストポーチ" , "#"
+                    %li
+                      = link_to "ボディーバック" , "#"
+                    %li
+                      = link_to "ドラムバック" , "#"
+                    %li
+                      = link_to "ビジネスバック" , "#"
+                    %li
+                      = link_to "トララベルバック" , "#"
+                    %li
+                      = link_to "メッセンジャーバック" , "#"
+                    %li
+                      = link_to "エコバック" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "スーツ" , "#"
+                  %ul
+                    %li
+                      = link_to "スーツジャケット" , "#"
+                    %li
+                      = link_to "スーツベスト" , "#"
+                    %li
+                      = link_to "スラックス" , "#"
+                    %li
+                      = link_to "セットアップ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "帽子" , "#"
+                  %ul
+                    %li
+                      = link_to "キャップ" , "#"
+                    %li
+                      = link_to "ハット" , "#"
+                    %li
+                      = link_to "ニットキャップ/ビーニー" , "#"
+                    %li
+                      = link_to "ハンチング/ベレー帽" , "#" 
+                    %li
+                      = link_to "キャスケット" , "#"  
+                    %li
+                      = link_to "その他" , "#"  
+                %li
+                  = link_to "アクセサリー" , "#"  
+                  %ul
+                    %li
+                      = link_to "ネックレス" , "#"  
+                    %li
+                      = link_to "ブレスレット" , "#" 
+                    %li
+                      = link_to "バングル/リストバンド" , "#"
+                    %li
+                      = link_to "リング" , "#" 
+                    %li
+                      = link_to "ピアス(片耳用)" , "#"
+                    %li
+                      = link_to "ピアス(両耳用)" , "#"
+                    %li
+                      = link_to "アンクレット" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "小物" , "#" 
+                  %ul
+                    %li
+                      = link_to "長財布" , "#" 
+                    %li
+                      = link_to "折り財布" , "#" 
+                    %li
+                      = link_to "マネークリップ" , "#" 
+                    %li
+                      = link_to "コインケース/小銭入れ" , "#"
+                    %li
+                      = link_to "名刺入れ/定期入れ" , "#"
+                    %li
+                      = link_to "キーケース" , "#" 
+                    %li
+                      = link_to "キーホルダー" , "#" 
+                    %li
+                      = link_to "ネクタイ" , "#"
+                    %li
+                      = link_to "手袋" , "#" 
+                    %li
+                      = link_to "ハンカチ" , "#" 
+                    %li
+                      = link_to "ベルト" , "#" 
+                    %li
+                      = link_to "マフラー" , "#" 
+                    %li
+                      = link_to "ストール" , "#" 
+                    %li
+                      = link_to "バンダナ" , "#" 
+                    %li
+                      = link_to "ネックウォーマー" , "#" 
+                    %li
+                      = link_to "サスペンダー" , "#" 
+                    %li
+                      = link_to "ウオレットチェーン" , "#" 
+                    %li
+                      = link_to "サングラス/メガネ" , "#"
+                    %li
+                      = link_to "モバイルケース/カバー" , "#"
+                    %li
+                      = link_to "手帳" , "#" 
+                    %li
+                      = link_to "ストラップ" , "#" 
+                    %li
+                      = link_to "ネクタイピン" , "#" 
+                    %li
+                      = link_to "カフリンクス" , "#" 
+                    %li
+                      = link_to "イヤマフラー" , "#" 
+                    %li
+                      = link_to "傘" , "#" 
+                    %li
+                      = link_to "レインコート" , "#" 
+                    %li
+                      = link_to "ミラー" , "#" 
+                    %li
+                      = link_to "タバコグッズ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "時計" , "#" 
+                  %ul
+                    %li
+                      = link_to "腕時計(アナログ)" , "#"
+                    %li
+                      = link_to "腕時計(デジタル)" , "#"
+                    %li
+                      = link_to "ラバーベルト" , "#" 
+                    %li
+                      = link_to "レザーベルト" , "#"
+                    %li
+                      = link_to "金属ベルト" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "水着" , "#" 
+                  %ul
+                    %li
+                      = link_to "一般水着" , "#" 
+                    %li
+                      = link_to "スポーツ用" , "#" 
+                    %li
+                      = link_to "アクセサリー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "レッグウェア" , "#" 
+                  %ul
+                    %li
+                      = link_to "ソックス" , "#" 
+                    %li
+                      = link_to "レギンス/スパッツ" , "#"
+                    %li
+                      = link_to "レッグウォーマー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "アンダーウェア" , "#" 
+                  %ul
+                    %li
+                      = link_to "トランクス" , "#" 
+                    %li
+                      = link_to "ボクサーパンツ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "その他" , "#" 
+          %ul
+            %li
+              = link_to "ベビー・キッズ" , "#"
+              %ul
+                %li
+                  = link_to "ベビー服(女の子用) ~95cm" , "#"
+                  %ul
+                    %li
+                      = link_to "トップス" , "#" 
+                    %li
+                      = link_to "アウター" , "#" 
+                    %li
+                      = link_to "パンツ" , "#" 
+                    %li
+                      = link_to "スカート" , "#"
+                    %li
+                      = link_to "ワンピース" , "#" 
+                    %li
+                      = link_to "ベビードレス" , "#" 
+                    %li
+                      = link_to "おくるみ" , "#" 
+                    %li
+                      = link_to "下着/肌着" , "#"
+                    %li
+                      = link_to "パジャマ" , "#" 
+                    %li
+                      = link_to "ロンパース" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ビー服(男の子用）~95cm" , "#"
+                  %ul
+                    %li
+                      = link_to "トップス" , "#" 
+                    %li
+                      = link_to "アウター" , "#" 
+                    %li
+                      = link_to "パンツ" , "#" 
+                    %li
+                      = link_to "おくるみ" , "#" 
+                    %li
+                      = link_to "下着/肌着" , "#"
+                    %li
+                      = link_to "パジャマ" , "#" 
+                    %li
+                      = link_to "ロンパース" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ベビー服(男女兼用)~95cm" , "#" 
+                  %ul
+                    %li
+                      = link_to "トップス" , "#" 
+                    %li
+                      = link_to "アウター" , "#" 
+                    %li
+                      = link_to "パンツ" , "#" 
+                    %li
+                      = link_to "おくるみ" , "#" 
+                    %li
+                      = link_to "下着/肌着" , "#" 
+                    %li
+                      = link_to "パジャマ" , "#" 
+                    %li
+                      = link_to "ロンパース" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "キッズ服(女の子用)100cm~" , "#" 
+                  %ul
+                    %li
+                      = link_to "コート" , "#" 
+                    %li
+                      = link_to "ジャケット/上着" , "#" 
+                    %li
+                      = link_to "トップス(Tシャツ/カットソー)" , "#" 
+                    %li
+                      = link_to "トップス(トレーナー)" , "#" 
+                    %li
+                      = link_to "トップス(チュニック)" , "#" 
+                    %li
+                      = link_to "トップス(タンクトップ)" , "#" 
+                    %li
+                      = link_to "トップス(その他)" , "#" 
+                    %li
+                      = link_to "スカート" , "#" 
+                    %li
+                      = link_to "パンツ" , "#" 
+                    %li
+                      = link_to "セットアップ" , "#" 
+                    %li
+                      = link_to "フォーマル/ドレス" , "#" 
+                    %li
+                      = link_to "和服" , "#" 
+                    %li
+                      = link_to "浴衣" , "#" 
+                    %li
+                      = link_to "甚平" , "#" 
+                    %li
+                      = link_to "水着" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "キッズ服(男の子用)100cm~" , "#" 
+                  %ul
+                    %li
+                      = link_to "コート" , "#" 
+                    %li
+                      = link_to "ジャケット/上着" , "#" 
+                    %li
+                      = link_to "トップス(Tシャツ/カットソー)" , "#" 
+                    %li
+                      = link_to "トップス(トレーナー)" , "#" 
+                    %li
+                      = link_to "トップス(その他)" , "#" 
+                    %li
+                      = link_to "パンツ" , "#" 
+                    %li
+                      = link_to "セットアップ" , "#" 
+                    %li
+                      = link_to "パジャマ" , "#" 
+                    %li
+                      = link_to "フォーマル/ドレス" , "#" 
+                    %li
+                      = link_to "和服" , "#" 
+                    %li
+                      = link_to "浴衣" , "#" 
+                    %li
+                      = link_to "甚平" , "#" 
+                    %li
+                      = link_to "水着" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "キッズ服(男女兼用)100cm~" , "#" 
+                  %ul
+                    %li
+                      = link_to "コート" , "#" 
+                    %li
+                      = link_to "ジャケット/上着" , "#" 
+                    %li
+                      = link_to "トップス(Tシャツ/カットソー)" , "#" 
+                    %li
+                      = link_to "トップス(トレーナー)" , "#" 
+                    %li
+                      = link_to "トップス(その他)" , "#" 
+                    %li
+                      = link_to "ボトムス" , "#" 
+                    %li
+                      = link_to "パジャマ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "キッズ靴" , "#" 
+                  %ul
+                    %li
+                      = link_to "スニーカー" , "#" 
+                    %li
+                      = link_to "サンダル" , "#" 
+                    %li
+                      = link_to "ブーツ" , "#" 
+                    %li
+                      = link_to "長靴" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "子ども用ファッション小物" , "#" 
+                  %ul
+                    %li
+                      = link_to "靴下/スパッツ" , "#" 
+                    %li
+                      = link_to "帽子" , "#" 
+                    %li
+                      = link_to "エプロン" , "#" 
+                    %li
+                      = link_to "サスペンダー" , "#" 
+                    %li
+                      = link_to "タイツ" , "#" 
+                    %li
+                      = link_to "ハンカチ" , "#" 
+                    %li
+                      = link_to "バンダナ" , "#" 
+                    %li
+                      = link_to "ベルト" , "#" 
+                    %li
+                      = link_to "マフラー" , "#" 
+                    %li
+                      = link_to "傘" , "#" 
+                    %li
+                      = link_to "手袋" , "#" 
+                    %li
+                      = link_to "スタイ" , "#" 
+                    %li
+                      = link_to "バッグ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "おむつ/トイレ/バス" , "#" 
+                  %ul
+                    %li
+                      = link_to "おむつ用品" , "#"  
+                    %li
+                      = link_to "おまる/補助便座" , "#" 
+                    %li
+                      = link_to "トレーニングパンツ" , "#" 
+                    %li
+                      = link_to "ベビーバス" , "#" 
+                    %li
+                      = link_to "お風呂用品" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "外出/移動用品" , "#" 
+                  %ul
+                    %li
+                      = link_to "ベビーカー" , "#" 
+                    %li
+                      = link_to "抱っこひも/スリング" , "#"  
+                    %li
+                      = link_to "チャイルドシート" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "授乳/食事" , "#" 
+                  %ul
+                    %li
+                      = link_to "ミルク" , "#" 
+                    %li
+                      = link_to "ベビーフード" , "#" 
+                    %li
+                      = link_to "ベビー用食器" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ベビー家具/寝具/室内用品" , "#" 
+                  %ul
+                    %li
+                      = link_to "ベッド" , "#" 
+                    %li
+                      = link_to "布団/毛布" , "#"  
+                    %li
+                      = link_to "イス" , "#"
+                    %li
+                      = link_to "たんす" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "おもちゃ" , "#" 
+                  %ul
+                    %li
+                      = link_to "おふろのおもちゃ" , "#" 
+                    %li
+                      = link_to "がらがら" , "#" 
+                    %li
+                      = link_to "オルゴール" , "#" 
+                    %li
+                      = link_to "ベビージム" , "#" 
+                    %li
+                      = link_to "手押し車/カタカタ" , "#" 
+                    %li
+                      = link_to "知育玩具" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "行事/記念品" , "#" 
+                  %ul
+                    %li
+                      = link_to "お宮参り用品" , "#" 
+                    %li
+                      = link_to "お食い染め用品" , "#" 
+                    %li
+                      = link_to "アルバム" , "#" 
+                    %li
+                      = link_to "手形/足形" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "その他" , "#" 
+                  %ul
+                    %li
+                      = link_to "母子手帳用品" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+          %ul
+            %li
+              = link_to "インテリア・住まい・小物" , "#" 
+              %ul
+                %li
+                  = link_to "キッチン/食器" , "#" 
+                  %ul
+                    %li
+                      = link_to "食器" , "#"  
+                    %li
+                      = link_to "調理器具" , "#" 
+                    %li
+                      = link_to "収納キッチン" , "#" 
+                    %li
+                      = link_to "弁当用品" , "#" 
+                    %li
+                      = link_to "カトラリー(スプーン等)" , "#"  
+                    %li
+                      = link_to "テーブル用品" , "#" 
+                    %li
+                      = link_to "容器" , "#" 
+                    %li
+                      = link_to "エプロン" , "#" 
+                    %li
+                      = link_to "アルコールグッズ" , "#" 
+                    %li
+                      = link_to "浄水器" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ベッド/マットレス" , "#" 
+                  %ul
+                    %li
+                      = link_to "セミシングルベッド" , "#" 
+                    %li
+                      = link_to "シングルベッド" , "#" 
+                    %li
+                      = link_to "セミダブルベッド" , "#" 
+                    %li
+                      = link_to "ダブルベッド" , "#" 
+                    %li
+                      = link_to "ワイドダブルベッド" , "#" 
+                    %li
+                      = link_to "クイーンベッド" , "#" 
+                    %li
+                      = link_to "キングベッド" , "#" 
+                    %li
+                      = link_to "脚付きマットレスベッド" , "#" 
+                    %li
+                      = link_to "マットレス" , "#" 
+                    %li
+                      = link_to "すのこベッド" , "#" 
+                    %li
+                      = link_to "ロフトベッド/システムベッド" , "#" 
+                    %li
+                      = link_to "簡易ベッド/折りたたみベッド" , "#" 
+                    %li
+                      = link_to "収納付き" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ソファ/ソファベット" , "#" 
+                  %ul
+                    %li
+                      = link_to "ソファセット" , "#" 
+                    %li
+                      = link_to "シングルソファ" , "#" 
+                    %li
+                      = link_to "ラブソファ" , "#" 
+                    %li
+                      = link_to "トリプルソファ" , "#" 
+                    %li
+                      = link_to "オットマン" , "#" 
+                    %li
+                      = link_to "コーナーソファ" , "#" 
+                    %li
+                      = link_to "ビーズソファクションソファ" , "#" 
+                    %li
+                      = link_to "ローソファフロアソファ" , "#" 
+                    %li
+                      = link_to "ソファベット" , "#" 
+                    %li
+                      = link_to "応接セット" , "#" 
+                    %li
+                      = link_to "ソファカバー" , "#" 
+                    %li
+                      = link_to "リクライニングソファ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "椅子/チェア" , "#" 
+                  %ul
+                    %li
+                      = link_to "一般" , "#" 
+                    %li
+                      = link_to "スツール" , "#" 
+                    %li
+                      = link_to "ダイニングチェア" , "#" 
+                    %li
+                      = link_to "ハイバックチェア" , "#" 
+                    %li
+                      = link_to "ロッキングチェア" , "#" 
+                    %li
+                      = link_to "座椅子" , "#" 
+                    %li
+                      = link_to "折り畳みイス" , "#" 
+                    %li
+                      = link_to "デスクチェア" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "机/テーブル" , "#" 
+                  %ul
+                    %li
+                      = link_to "こたつ" , "#" 
+                    %li
+                      = link_to "カウンターテーブル" , "#" 
+                    %li
+                      = link_to "サイドテーブル" , "#" 
+                    %li
+                      = link_to "ダイニングテーブル" , "#" 
+                    %li
+                      = link_to "座卓/ちゃぶ台" , "#" 
+                    %li
+                      = link_to "アウトドア用" , "#" 
+                    %li
+                      = link_to "パソコン用" , "#" 
+                    %li
+                      = link_to "事務机/学習机" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "収納家具" , "#" 
+                  %ul
+                    %li
+                      = link_to "リビング収納" , "#" 
+                    %li
+                      = link_to "キッチン収納" , "#" 
+                    %li
+                      = link_to "玄関/屋外収納" , "#" 
+                    %li
+                      = link_to "バス/トイレ収納" , "#" 
+                    %li
+                      = link_to "本収納" , "#" 
+                    %li
+                      = link_to "本/CD/DVD収納" , "#" 
+                    %li
+                      = link_to "洋服タンス/押入れ収納" , "#" 
+                    %li
+                      = link_to "電話台/ファックス台" , "#" 
+                    %li
+                      = link_to "ドレッサー/鏡台" , "#"  
+                    %li
+                      = link_to "棚/ラック" , "#" 
+                    %li
+                      = link_to "ケース/ボックス" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ラグ/カーペットマット" , "#" 
+                  %ul
+                    %li
+                      = link_to "ラグ" , "#" 
+                    %li
+                      = link_to "カーペット" , "#" 
+                    %li
+                      = link_to "ホットカーペット" , "#" 
+                    %li
+                      = link_to "玄関/キッチンマット" , "#" 
+                    %li
+                      = link_to "トイレ/バスマット" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "カーテン/ブラインド" , "#" 
+                  %ul
+                    %li
+                      = link_to "カーテン" , "#" 
+                    %li
+                      = link_to "ブラインド" , "#" 
+                    %li
+                      = link_to "ロールスクリーン" , "#" 
+                    %li
+                      = link_to "のれん" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ライト/照明" , "#" 
+                  %ul
+                    %li
+                      = link_to "蛍光灯" , "#" 
+                    %li
+                      = link_to "天井照明" , "#" 
+                    %li
+                      = link_to "フロアスタンド" , "#" 
+                    %li
+                      = link_to "その他", "#" 
+                %li
+                  = link_to "寝具" , "#" 
+                  %ul
+                    %li
+                      = link_to "布団/毛布" , "#" 
+                    %li
+                      = link_to "枕" , "#"  
+                    %li
+                      = link_to "シーツ/カバー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "インテリア小物" , "#" 
+                  %ul
+                    %li
+                      = link_to "ゴミ箱" , "#" 
+                    %li
+                      = link_to "ウエルカムボード" , "#" 
+                    %li
+                      = link_to "オルゴール" , "#"   
+                    %li
+                      = link_to "クッション" , "#" 
+                    %li
+                      = link_to "クッションカバー" , "#" 
+                    %li
+                      = link_to "スリッパラック" , "#" 
+                    %li
+                      = link_to "ティッシュボックス" , "#" 
+                    %li
+                      = link_to "バスケット/かご" , "#" 
+                    %li
+                      = link_to "フォトフレーム" , "#" 
+                    %li
+                      = link_to "マガジンラック" , "#" 
+                    %li
+                      = link_to "モビール" , "#" 
+                    %li
+                      = link_to "花瓶" , "#" 
+                    %li
+                      = link_to "灰皿" , "#" 
+                    %li
+                      = link_to "傘立て" , "#" 
+                    %li
+                      = link_to "小物入れ" , "#" 
+                    %li
+                      = link_to "置時計" , "#" 
+                    %li
+                      = link_to "掛時計/柱時計" , "#" 
+                    %li
+                      = link_to "鏡(立て掛け式)" , "#" 
+                    %li
+                      = link_to "鏡(壁掛け式)" , "#" 
+                    %li
+                      = link_to "置物" , "#" 
+                    %li
+                      = link_to "風鈴" , "#" 
+                    %li
+                      = link_to "植物/観葉植物" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "季節/年中行事" , "#" 
+                  %ul
+                    %li
+                      = link_to "正月" , "#" 
+                    %li
+                      = link_to "成人式" , "#" 
+                    %li
+                      = link_to "バレンタイン" , "#" 
+                    %li
+                      = link_to "ひな祭り" , "#" 
+                    %li
+                      = link_to "こどもの日" , "#" 
+                    %li
+                      = link_to "母の日" , "#" 
+                    %li
+                      = link_to "父の日" , "#" 
+                    %li
+                      = link_to "サマーギフト/お中元" , "#" 
+                    %li
+                      = link_to "夏/夏休み" , "#" 
+                    %li
+                      = link_to "ハロウィン" , "#" 
+                    %li
+                      = link_to "敬老の日" , "#" 
+                    %li
+                      = link_to "七五三" , "#" 
+                    %li
+                      = link_to "お歳暮" , "#" 
+                    %li
+                      = link_to "クリスマス" , "#" 
+                    %li
+                      = link_to "冬一般" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "その他" , "#" 
+          %ul
+            %li
+              = link_to "本・音楽・ゲーム" , "#" 
+              %ul
+                %li
+                  = link_to "本" , "#" 
+                  %ul
+                    %li
+                      = link_to "文学/小説" , "#" 
+                    %li
+                      = link_to "人文/社会" , "#"  
+                    %li
+                      = link_to "ノンフィクション/教養" , "#"  
+                    %li
+                      = link_to "地図/旅行ガイド" , "#" 
+                    %li
+                      = link_to "ビジネス/経済" , "#" 
+                    %li
+                      = link_to "健康/医学" , "#" 
+                    %li
+                      = link_to "コンピュータ/IT" , "#" 
+                    %li
+                      = link_to "趣味/スポーツ/実用" , "#" 
+                    %li
+                      = link_to "住まい/暮らし/子育て" , "#" 
+                    %li
+                      = link_to "アート/エンタメ" , "#" 
+                    %li
+                      = link_to "洋書" , "#" 
+                    %li
+                      = link_to "絵本" , "#" 
+                    %li
+                      = link_to "参考書" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "漫画" , "#" 
+                  %ul
+                    %li
+                      = link_to "全巻セット" , "#" 
+                    %li
+                      = link_to "少年漫画" , "#" 
+                    %li
+                      = link_to "少女漫画" , "#" 
+                    %li
+                      = link_to "青年漫画" , "#" 
+                    %li
+                      = link_to "女性漫画" , "#" 
+                    %li
+                      = link_to "同人誌" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "雑誌" , "#" 
+                  %ul
+                    %li
+                      = link_to "アート/エンタメ/ホビー" , "#" 
+                    %li
+                      = link_to "ファッション" , "#" 
+                    %li
+                      = link_to "ニュース/総合" , "#" 
+                    %li
+                      = link_to "趣味/スポーツ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "CD" , "#" 
+                  %ul
+                    %li
+                      = link_to "邦楽" , "#" 
+                    %li
+                      = link_to "洋楽" , "#" 
+                    %li
+                      = link_to "アニメ" , "#" 
+                    %li
+                      = link_to "クラシック" , "#" 
+                    %li
+                      = link_to "K-POP/アジア" , "#" 
+                    %li
+                      = link_to "キッズ/ファミリー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "DVD／ブルーレイ" , "#"  
+                  %ul
+                    %li
+                      = link_to "外国映画" , "#" 
+                    %li
+                      = link_to "日本映画" , "#" 
+                    %li
+                      = link_to "アニメ" , "#" 
+                    %li
+                      = link_to "TVドラマ" , "#" 
+                    %li
+                      = link_to "ミュージック" , "#" 
+                    %li
+                      = link_to "お笑い/バラエティ" , "#" 
+                    %li
+                      = link_to "ポーツ/フィットネス" , "#" 
+                    %li
+                      = link_to "キッズ/ファミリー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "レコード" , "#" 
+                  %ul
+                    %li
+                      = link_to "邦楽" , "#" 
+                    %li
+                      = link_to "洋楽" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "テレビゲーム" , "#" 
+                  %ul
+                    %li
+                      = link_to "家庭用ゲーム機本体" , "#" 
+                    %li
+                      = link_to "家庭用ゲームソフト" , "#" 
+                    %li
+                      = link_to "携帯用ゲーム機本体" , "#" 
+                    %li
+                      = link_to "携帯用ゲームソフト" , "#" 
+                    %li
+                      = link_to "PCゲーム" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+          %ul
+            %li
+              = link_to "おもちゃ・ホビー・グッズ" , "#" 
+              %ul
+                %li
+                  = link_to "おもちゃ" , "#" 
+                  %ul
+                    %li
+                      = link_to "キャラクターグッズ" , "#" 
+                    %li
+                      = link_to "ぬいぐるみ" , "#" 
+                    %li
+                      = link_to "小物/アクセサリー" , "#" 
+                    %li
+                      = link_to "模型/プラモデル" , "#" 
+                    %li
+                      = link_to "ミニカー" , "#" 
+                    %li
+                      = link_to "トイラジコン" , "#" 
+                    %li
+                      = link_to "プラモデル" , "#" 
+                    %li
+                      = link_to "ホビーラジコン" , "#" 
+                    %li
+                      = link_to "鉄道模型" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "タレントグッズ" , "#" 
+                  %ul
+                    %li
+                      = link_to "アイドル" , "#" 
+                    %li
+                      = link_to "ミュージシャン" , "#" 
+                    %li
+                      = link_to "タレント/お笑い芸人" , "#" 
+                    %li
+                      = link_to "スポーツ選手" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "コミック/アニメグッズ" , "#" 
+                  %ul
+                    %li
+                      = link_to "ストラップ" , "#" 
+                    %li
+                      = link_to "キーホルダー" , "#" 
+                    %li
+                      = link_to "バッジ" , "#" 
+                    %li
+                      = link_to "カード" , "#" 
+                    %li
+                      = link_to "クリアファイル" , "#" 
+                    %li
+                      = link_to "ポスター" , "#" 
+                    %li
+                      = link_to "タオル" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "トレーディングカード" , "#" 
+                  %ul
+                    %li
+                      = link_to "遊戯王" , "#" 
+                    %li
+                      = link_to "マジック:ザ・ギャザリング" , "#" 
+                    %li
+                      = link_to "ポケモンカードゲーム" , "#" 
+                    %li
+                      = link_to "デュエルマスターズ" , "#" 
+                    %li
+                      = link_to "バトルスピリッツ" , "#" 
+                    %li
+                      = link_to "プリパラ" , "#" 
+                    %li
+                      = link_to "アイカツ" , "#" 
+                    %li
+                      = link_to "カードファイト!!ヴァンガード" , "#"  
+                    %li
+                      = link_to "ヴァイスシュバルツ" , "#" 
+                    %li
+                      = link_to "プロ野球オーナーズリーグ" , "#" 
+                    %li
+                      = link_to "ベースボールヒーローズ" , "#" 
+                    %li
+                      = link_to "ドラゴンボール" , "#" 
+                    %li
+                      = link_to "スリーブ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "フィギュア" , "#" 
+                  %ul
+                    %li
+                      = link_to "コミック/アニメ" , "#" 
+                    %li
+                      = link_to "特撮" , "#" 
+                    %li
+                      = link_to "ゲームキャラクター" , "#" 
+                    %li
+                      = link_to "SF/ファンタジー/ホラー" , "#" 
+                    %li
+                      = link_to "アメコミ" , "#" 
+                    %li
+                      = link_to "スポーツ" , "#" 
+                    %li
+                      = link_to "ミリタリー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "楽器/機材" , "#" 
+                  %ul
+                    %li
+                      = link_to "エレキギター" , "#" 
+                    %li
+                      = link_to "アコースティックギター" , "#" 
+                    %li
+                      = link_to "ベース" , "#" 
+                    %li
+                      = link_to "エフェクター" , "#" 
+                    %li
+                      = link_to "アンプ" , "#" 
+                    %li
+                      = link_to "弦楽器" , "#" 
+                    %li
+                      = link_to "管楽器" , "#" 
+                    %li
+                      = link_to "鍵盤楽器" , "#" 
+                    %li
+                      = link_to "打楽器" , "#" 
+                    %li
+                      = link_to "和楽器" , "#" 
+                    %li
+                      = link_to "楽譜/スコア" , "#" 
+                    %li
+                      = link_to "レコーディング/AP機器" , "#" 
+                    %li
+                      = link_to "DJ機器" , "#" 
+                    %li
+                      = link_to "DTM/DAW" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "コレクション" , "#" 
+                  %ul
+                    %li
+                      = link_to "武具" , "#" 
+                    %li
+                      = link_to "使用済切手/官製はがき" , "#" 
+                    %li
+                      = link_to "旧貨幣/金貨/銀貨/記念硬貨" , "#" 
+                    %li
+                      = link_to "印刷物" , "#" 
+                    %li
+                      = link_to "ノベルティグッズ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ミリタリー" , "#" 
+                  %ul
+                    %li
+                      = link_to "トイガン" , "#" 
+                    %li
+                      = link_to "個別装備" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "美術品" , "#" 
+                  %ul
+                    %li
+                      = link_to "陶芸" , "#" 
+                    %li
+                      = link_to "ガラス" , "#" 
+                    %li
+                      = link_to "漆芸" , "#" 
+                    %li
+                      = link_to "金属工芸" , "#" 
+                    %li
+                      = link_to "絵画/タペストリー" , "#" 
+                    %li
+                      = link_to "版画" , "#" 
+                    %li
+                      = link_to "彫刻/オブジェクト" , "#" 
+                    %li
+                      = link_to "書" , "#" 
+                    %li
+                      = link_to "写真" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "アート用品" , "#" 
+                  %ul
+                    %li
+                      = link_to "画材" , "#" 
+                    %li
+                      = link_to "額縁" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "その他" , "#" 
+                  %ul
+                    %li
+                      = link_to "トランプ/UNO" , "#" 
+                    %li
+                      = link_to "カルタ/百人一首" , "#" 
+                    %li
+                      = link_to "ダーツ" , "#" 
+                    %li
+                      = link_to "ビリヤード" , "#" 
+                    %li
+                      = link_to "麻雀" , "#" 
+                    %li
+                      = link_to "パズル/ジグソーパズル" , "#" 
+                    %li
+                      = link_to "囲碁/将棋" , "#" 
+                    %li
+                      = link_to "オセロ/チェス" , "#" 
+                    %li
+                      = link_to "人生ゲーム" , "#" 
+                    %li
+                      = link_to "野球/サッカーゲーム" , "#" 
+                    %li
+                      = link_to "スポーツ" , "#" 
+                    %li
+                      = link_to "三輪車/乗り物" , "#" 
+                    %li
+                      = link_to "ヨーヨー" , "#" 
+                    %li
+                      = link_to "模型製作用品" , "#" 
+                    %li
+                      = link_to "鉄道" , "#" 
+                    %li
+                      = link_to "航空機" , "#" 
+                    %li
+                      = link_to "アマチュア無線" , "#" 
+                    %li
+                      = link_to "パチンコ/スロット" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+          %ul
+            %li
+              = link_to "コスメ・香水・美容" , "#" 
+              %ul
+                %li
+                  = link_to "ベースメイク" , "#" 
+                  %ul
+                    %li
+                      = link_to "ファンデーション" , "#" 
+                    %li
+                      = link_to "化粧下地" , "#" 
+                    %li
+                      = link_to "コントロール" , "#" 
+                    %li
+                      = link_to "BBクリーム" , "#" 
+                    %li
+                      = link_to "CCクリーム" , "#" 
+                    %li
+                      = link_to "コンシーラー" , "#" 
+                    %li
+                      = link_to "フェイスパウダー" , "#" 
+                    %li
+                      = link_to "トライアルセット/サンプル" , "#"
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "メイクアップ" , "#" 
+                  %ul
+                    %li
+                      = link_to "アイシャドウ" , "#" 
+                    %li
+                      = link_to "口紅" , "#" 
+                    %li
+                      = link_to "リップグロス" , "#" 
+                    %li
+                      = link_to "リップライナー" , "#" 
+                    %li
+                      = link_to "チーク" , "#" 
+                    %li
+                      = link_to "フェイスカラー" , "#" 
+                    %li
+                      = link_to "マスカラ" , "#" 
+                    %li
+                      = link_to "アイライナー" , "#" 
+                    %li
+                      = link_to "つけまつげ" , "#" 
+                    %li
+                      = link_to "アイブロウペンシル" , "#" 
+                    %li
+                      = link_to "パウダーアイブロウ" , "#" 
+                    %li
+                      = link_to "眉マスカラ" , "#" 
+                    %li
+                      = link_to "トライアルセット/サンプル" , "#"  
+                    %li
+                      = link_to "メイク道具/化粧小物" , "#" 
+                    %li
+                      = link_to "美顔用品/美顔ローラー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ネイルケア" , "#" 
+                  %ul
+                    %li
+                      = link_to "ネイルカラー" , "#" 
+                    %li
+                      = link_to "カラージェル" , "#" 
+                    %li
+                      = link_to "ネイルベースコード/トップコード" , "#" 
+                    %li
+                      = link_to "ネイルアート用品" , "#" 
+                    %li
+                      = link_to "ネイルパーツ" , "#" 
+                    %li
+                      = link_to "ネイルチップ/つけ爪" , "#" 
+                    %li
+                      = link_to "手入れ用具" , "#" 
+                    %li
+                      = link_to "除光液" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "香水" , "#" 
+                  %ul
+                    %li
+                      = link_to "香水(女性用)" , "#" 
+                    %li
+                      = link_to "香水(男性用)" , "#" 
+                    %li
+                      = link_to "ユニセックス" , "#" 
+                    %li
+                      = link_to "ボディミスト" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "スキンケア基礎用品" , "#" 
+                  %ul
+                    %li
+                      = link_to "化粧水/ローション" , "#" 
+                    %li
+                      = link_to "乳液/ミルク" , "#" 
+                    %li
+                      = link_to "美容液" , "#" 
+                    %li
+                      = link_to "フェイスクリーム" , "#" 
+                    %li
+                      = link_to "洗顔料" , "#" 
+                    %li
+                      = link_to "クレンジング/メイク落とし" , "#" 
+                    %li
+                      = link_to "パック/フェイスマスク" , "#" 
+                    %li
+                      = link_to "ジェル/ゲル" , "#" 
+                    %li
+                      = link_to "ブースター導入液" , "#" 
+                    %li
+                      = link_to "アイケア" , "#" 
+                    %li
+                      = link_to "リップケア" , "#" 
+                    %li
+                      = link_to "トライアルセット/サンプル" , "#" 
+                    %li
+                      = link_to "洗顔グッズ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ヘアケア" , "#" 
+                  %ul
+                    %li
+                      = link_to "シャンプー" , "#" 
+                    %li
+                      = link_to "トリートメント" , "#" 
+                    %li
+                      = link_to "コンディショナー" , "#" 
+                    %li
+                      = link_to "リンス" , "#" 
+                    %li
+                      = link_to "スタイリング剤" , "#" 
+                    %li
+                      = link_to "カラーリング剤" , "#" 
+                    %li
+                      = link_to "ブラシ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ボディケア" , "#"
+                  %ul
+                    %li
+                      = link_to "オイル/クリーム" , "#" 
+                    %li
+                      = link_to "ハンドクリーム" , "#" 
+                    %li
+                      = link_to "ローション" , "#" 
+                    %li
+                      = link_to "日焼け止め/サンオイル" , "#" 
+                    %li
+                      = link_to "ボディソープ" , "#" 
+                    %li
+                      = link_to "入浴剤" , "#" 
+                    %li
+                      = link_to "制汗/デオドラント" , "#" 
+                    %li
+                      = link_to "フットケア" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "オーラルケア" , "#" 
+                  %ul
+                    %li
+                      = link_to "口臭防止/エチケット用品" , "#" 
+                    %li
+                      = link_to "歯ブラシ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "リラクゼーション" , "#" 
+                  %ul
+                    %li
+                      = link_to "エッセンシャルオイル" , "#" 
+                    %li
+                      = link_to "芳香剤" , "#" 
+                    %li
+                      = link_to "お香/香炉" , "#" 
+                    %li
+                      = link_to "キャンドル" , "#" 
+                    %li
+                      = link_to "リラクゼーショングッズ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ダイエット" , "#" 
+                  %ul
+                    %li
+                      = link_to "ダイエット食品" , "#" 
+                    %li
+                      = link_to "エクササイズ用品" , "#" 
+                    %li
+                      = link_to "体重計" , "#" 
+                    %li
+                      = link_to "体脂肪計" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "その他" , "#" 
+                  %ul
+                    %li
+                      = link_to "健康用品" , "#" 
+                    %li
+                      = link_to "看護/介護用品" , "#"  
+                    %li
+                      = link_to "救急/衛生用品" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+          %ul
+            %li
+              = link_to "家電・スマホ・カメラ" , "#" 
+              %ul
+                %li
+                  = link_to "スマートフォン/携帯電話" , "#"  
+                  %ul
+                    %li
+                      = link_to "スマートフォン本体" , "#" 
+                    %li
+                      = link_to "バッテリー/充電器" , "#" 
+                    %li
+                      = link_to "携帯電話本体" , "#" 
+                    %li
+                      = link_to "PHS本体" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "スマホアクセサリー" , "#" 
+                  %ul
+                    %li
+                      = link_to "Andoroid用ケース" , "#" 
+                    %li
+                      = link_to "iPhone用ケース" , "#" 
+                    %li
+                      = link_to "カバー" , "#" 
+                    %li
+                      = link_to "イヤホンジャック" , "#" 
+                    %li
+                      = link_to "ストラップ" , "#" 
+                    %li
+                      = link_to "フィルム" , "#" 
+                    %li
+                      = link_to "自撮り棒" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "PC/タブレット" , "#"  
+                  %ul
+                    %li
+                      = link_to "タブレット" , "#" 
+                    %li
+                      = link_to "ノートPC" , "#" 
+                    %li
+                      = link_to "デスクトップ型PC" , "#" 
+                    %li
+                      = link_to "ディスプレイ" , "#" 
+                    %li
+                      = link_to "電子ブックリーダー" , "#" 
+                    %li
+                      = link_to "PC周辺機器" , "#" 
+                    %li
+                      = link_to "PCパーツ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "カメラ" , "#" 
+                  %ul
+                    %li
+                      = link_to "デジタルカメラ" , "#" 
+                    %li
+                      = link_to "ビデオカメラ" , "#" 
+                    %li
+                      = link_to "レンズ(単焦点)" , "#" 
+                    %li
+                      = link_to "レンズ(ズーム)" , "#" 
+                    %li
+                      = link_to "フィルムカメラ" , "#" 
+                    %li
+                      = link_to "防犯カメラ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "テレビ/映像機器" , "#" 
+                  %ul
+                    %li
+                      = link_to "テレビ" , "#" 
+                    %li
+                      = link_to "プロジェクター" , "#" 
+                    %li
+                      = link_to "ブルーレイレコーダー" , "#" 
+                    %li
+                      = link_to "DVDレコーダー" , "#" 
+                    %li
+                      = link_to "ブルーレイプレーヤー" , "#" 
+                    %li
+                      = link_to "DVDプレーヤー" , "#" 
+                    %li
+                      = link_to "映像用ケーブル" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "オーディオ機器" , "#" 
+                  %ul
+                    %li
+                      = link_to "ポータルプレーヤー" , "#" 
+                    %li
+                      = link_to "イヤフォン" , "#" 
+                    %li
+                      = link_to "ヘッドフォン" , "#" 
+                    %li
+                      = link_to "アンプ" , "#" 
+                    %li
+                      = link_to "スピーカー" , "#" 
+                    %li
+                      = link_to "ケーブル/シールド" , "#" 
+                    %li
+                      = link_to "ラジオ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "美容・健康" , "#" 
+                  %ul
+                    %li
+                      = link_to "ヘアドライヤー" , "#" 
+                    %li
+                      = link_to "ヘアアイロン" , "#" 
+                    %li
+                      = link_to "美容機器" , "#" 
+                    %li
+                      = link_to "電気シェーバー" , "#" 
+                    %li
+                      = link_to "電動歯ブラシ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "冷暖房/空調" , "#" 
+                  %ul
+                    %li
+                      = link_to "エアコン" , "#" 
+                    %li
+                      = link_to "空気清浄機" , "#" 
+                    %li
+                      = link_to "加湿器" , "#" 
+                    %li
+                      = link_to "扇風機" , "#" 
+                    %li
+                      = link_to "除湿機" , "#" 
+                    %li
+                      = link_to "ファンヒーター" , "#" 
+                    %li
+                      = link_to "電気ヒーター" , "#" 
+                    %li
+                      = link_to "オイルヒーター" , "#" 
+                    %li
+                      = link_to "ストーブ" , "#" 
+                    %li
+                      = link_to "ホットカーペット" , "#" 
+                    %li
+                      = link_to "こたつ" , "#" 
+                    %li
+                      = link_to "電気毛布" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "生活家電" , "#" 
+                  %ul
+                    %li
+                      = link_to "冷蔵庫" , "#" 
+                    %li
+                      = link_to "洗濯機" , "#" 
+                    %li
+                      = link_to "炊飯器" , "#" 
+                    %li
+                      = link_to "電子レンジ/オーブン" , "#" 
+                    %li
+                      = link_to "周辺機器" , "#" 
+                    %li
+                      = link_to "アイロン" , "#" 
+                    %li
+                      = link_to "掃除機" , "#" 
+                    %li
+                      = link_to "エスプレッソマン" , "#" 
+                    %li
+                      = link_to "コーヒーメーカー" , "#" 
+                    %li
+                      = link_to "衣類乾燥機" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+              %ul
+                %li
+                  = link_to "その他" , "#" 
+                  %ul
+                    %li
+                      = link_to "その他" , "#" 
+          %ul
+            %li
+              = link_to "スポーツ・レジャー" , "#" 
+              %ul
+                %li
+                  = link_to "ゴルフ" , "#" 
+                  %ul
+                    %li
+                      = link_to "クラブ" , "#" 
+                    %li
+                      = link_to "ウエア(男性用)" , "#" 
+                    %li
+                      = link_to "ウエア(女性用)" , "#" 
+                    %li
+                      = link_to "バッグ" , "#" 
+                    %li
+                      = link_to "シューズ(男性用)" , "#" 
+                    %li
+                      = link_to "シューズ(女性用)" , "#" 
+                    %li
+                      = link_to "アクセサリー" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "フィッシング" , "#" 
+                  %ul
+                    %li
+                      = link_to "ロッド" , "#" 
+                    %li
+                      = link_to "リール" , "#" 
+                    %li
+                      = link_to "ルアー用品" , "#" 
+                    %li
+                      = link_to "ウエア" , "#" 
+                    %li
+                      = link_to "釣り糸/ライン" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "自転車" , "#" 
+                  %ul
+                    %li
+                      = link_to "自転車本体" , "#" 
+                    %li
+                      = link_to "ウエア" , "#" 
+                    %li
+                      = link_to "パーツ" , "#" 
+                    %li
+                      = link_to "アクセサリー" , "#" 
+                    %li
+                      = link_to "バッグ" , "#" 
+                    %li
+                      = link_to "工具/メンテナンス" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "トレーニング/エクササイズ" , "#" 
+                  %ul
+                    %li
+                      = link_to "ランニング" , "#" 
+                    %li
+                      = link_to "ウォーキング" , "#" 
+                    %li
+                      = link_to "ヨガ" , "#"  
+                    %li
+                      = link_to "トレーニング用品" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "野球" , "#" 
+                  %ul
+                    %li
+                      = link_to "ウェア" , "#" 
+                    %li
+                      = link_to "シューズ" , "#" 
+                    %li
+                      = link_to "グローブ" , "#" 
+                    %li
+                      = link_to "バット" , "#" 
+                    %li
+                      = link_to "アクセサリー" , "#" 
+                    %li
+                      = link_to "防具" , "#" 
+                    %li
+                      = link_to "練習機器" , "#" 
+                    %li
+                      = link_to "記念グッズ" , "#" 
+                    %li
+                      = link_to "応援グッズ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "サッカー/フットサル" , "#" 
+                  %ul
+                    %li
+                      = link_to "ウェア" , "#" 
+                    %li
+                      = link_to "シューズ" , "#" 
+                    %li
+                      = link_to "ボール" , "#" 
+                    %li
+                      = link_to "アクセサリー" , "#" 
+                    %li
+                      = link_to "記念グッズ" , "#" 
+                    %li
+                      = link_to "応援グッズ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "テニス" , "#" 
+                  %ul
+                    %li
+                      = link_to "ラケット(硬式用)" , "#" 
+                    %li
+                      = link_to "ラケット(軟式用)" , "#" 
+                    %li
+                      = link_to "ウェア" , "#" 
+                    %li
+                      = link_to "シューズ" , "#" 
+                    %li
+                      = link_to "ボール" , "#" 
+                    %li
+                      = link_to "アクセサリー" , "#" 
+                    %li
+                      = link_to "記念グッズ" , "#" 
+                    %li
+                      = link_to "応援グッズ" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "スノーボード" , "#" 
+                  %ul
+                    %li
+                      = link_to "ボード" , "#" 
+                    %li
+                      = link_to "バインディング" , "#" 
+                    %li
+                      = link_to "ブーツ(男性用)" , "#" 
+                    %li
+                      = link_to "ブーツ(女性用)" , "#" 
+                    %li
+                      = link_to "ブーツ(子供用)" , "#" 
+                    %li
+                      = link_to "ウエア/装備(男性用)" , "#" 
+                    %li
+                      = link_to "ウエア/装備(女性用)" , "#"
+                    %li
+                      = link_to "ウエア/装備(子ども用)" , "#" 
+                    %li
+                      = link_to "アクセサリー" , "#"  
+                    %li
+                      = link_to "バック" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "スキー" , "#" 
+                  %ul
+                    %li
+                      = link_to "板" , "#" 
+                    %li
+                      = link_to "ブーツ(男性用)" , "#" 
+                    %li
+                      = link_to "ブーツ(女性用)" , "#" 
+                    %li
+                      = link_to "ブーツ(子ども用)" , "#" 
+                    %li
+                      = link_to "ビンディング" , "#" 
+                    %li
+                      = link_to "ウエア(男性用)" , "#" 
+                    %li
+                      = link_to "ウエア(女性用)" , "#" 
+                    %li
+                      = link_to "ウエア(子ども用)" , "#" 
+                    %li
+                      = link_to "ストック" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "その他スポーツ" , "#" 
+                  %ul
+                    %li
+                      = link_to "ダンス/バレエ" , "#" 
+                    %li
+                      = link_to "サーフィン" , "#" 
+                    %li
+                      = link_to "バスケットボール" , "#" 
+                    %li
+                      = link_to "バドミントン" , "#" 
+                    %li
+                      = link_to "バレーボール" , "#" 
+                    %li
+                      = link_to "スケートボード" , "#" 
+                    %li
+                      = link_to "陸上競技" , "#" 
+                    %li
+                      = link_to "ラグビー" , "#" 
+                    %li
+                      = link_to "アメリカンフットボール" , "#" 
+                    %li
+                      = link_to "ボクシング" , "#" 
+                    %li
+                      = link_to "ボウリング" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "アウトドア" , "#" 
+                  %ul
+                    %li
+                      = link_to "テント/タープ" , "#" 
+                    %li
+                      = link_to "ライト/ランタン" , "#"  
+                    %li
+                      = link_to "寝袋/寝具" , "#" 
+                    %li
+                      = link_to "テーブル/チェア" , "#" 
+                    %li
+                      = link_to "トーブ/コンロ" , "#" 
+                    %li
+                      = link_to "調理器具" , "#" 
+                    %li
+                      = link_to "食器" , "#" 
+                    %li
+                      = link_to "登山用品" , "#"   
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "その他" , "#"
+                  %ul
+                    %li
+                      = link_to "旅行用品" , "#"
+                    %li
+                      = link_to "その他" , "#"
+          %ul
+            %li
+              = link_to "ハンドメイド" , "#" 
+              %ul
+                %li
+                  = link_to "アクセサリー(女性用)" , "#" 
+                  %ul
+                    %li
+                      = link_to "ピアス" , "#" 
+                    %li
+                      = link_to "イヤリング" , "#" 
+                    %li
+                      = link_to "ネックレス" , "#" 
+                    %li
+                      = link_to "ブレスレッド" , "#" 
+                    %li
+                      = link_to "リング" , "#" 
+                    %li
+                      = link_to "チャーム" , "#" 
+                    %li
+                      = link_to "ヘアゴム" , "#" 
+                    %li
+                      = link_to "アンクレット" , "#" 
+                    %li
+                      = link_to "その他" , "#" 
+                %li
+                  = link_to "ファッション/小物" , "#" 
+                  %ul
+                    %li
+                      = link_to "バッグ(女性用)" , "#" 
+                    %li
+                      = link_to "バッグ(男性用)" , "#" 
+                    %li
+                      = link_to "財布(女性用)" , "#"
+                    %li
+                      = link_to "財布(男性用)" , "#"
+                    %li
+                      = link_to "ファッション雑誌" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "アクセサリー/時計" , "#"
+                  %ul
+                    %li
+                      = link_to "アクセサリー(男性用)" , "#"
+                    %li
+                      = link_to "時計(女性用)" , "#"
+                    %li
+                      = link_to "時計(男性用)" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "日用品/インテリア" , "#"
+                  %ul
+                    %li
+                      = link_to "キッチン用品" , "#"
+                    %li
+                      = link_to "家具" , "#"
+                    %li
+                      = link_to "文房具" , "#"
+                    %li
+                      = link_to "アート/写真" , "#"
+                    %li
+                      = link_to "アロマ/キャンドル" , "#"
+                    %li
+                      = link_to "フラワー/ガーデン" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "趣味/おもちゃ" , "#"
+                  %ul
+                    %li
+                      = link_to "クラフト/布製品" , "#"
+                    %li
+                      = link_to "おもちゃ人形" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "キッズ/ベビー" , "#"
+                  %ul
+                    %li
+                      = link_to "ファッション雑誌" , "#"
+                    %li
+                      = link_to "スタイ/よだれかけ" , "#"
+                    %li
+                      = link_to "外出用品" , "#"
+                    %li
+                      = link_to "ネームタグ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "素材" , "#"
+                  %ul
+                    %li
+                      = link_to "各種パーツ" , "#"
+                    %li
+                      = link_to "生地/糸" , "#"
+                    %li
+                      = link_to "型紙/パターン" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "二次創作物" , "#"
+                  %ul
+                    %li
+                      = link_to "ingress" , "#"
+                    %li
+                      = link_to "クリエイターズ宇宙兄弟" , "#"
+                    %li
+                      = link_to "シンデレラガールズCPグッズ" , "#"
+                %li
+                  = link_to "その他" , "#"
+          %ul
+            %li
+              = link_to "チケット" , "#"
+              %ul
+                %li
+                  = link_to "音楽" , "#"
+                  %ul
+                    %li
+                      = link_to "男性アイドル" , "#"
+                    %li
+                      = link_to "女性アイドル" , "#"
+                    %li
+                      = link_to "韓流" , "#"
+                    %li
+                      = link_to "国内アーティスト" , "#"
+                    %li
+                      = link_to "海外アーティスト" , "#"
+                    %li
+                      = link_to "音楽フェス" , "#"
+                    %li
+                      = link_to "声優/アニメ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "スポーツ" , "#"
+                  %ul
+                    %li
+                      = link_to "サッカー" , "#"
+                    %li
+                      = link_to "野球" , "#"
+                    %li
+                      = link_to "テニス" , "#"
+                    %li
+                      = link_to "格闘技" , "#"
+                    %li
+                      = link_to "格闘技/プロレス" , "#"
+                    %li
+                      = link_to "相撲/武道" , "#"
+                    %li
+                      = link_to "ゴルフ" , "#"
+                    %li
+                      = link_to "バレーボール" , "#"
+                    %li
+                      = link_to "バスケットボール" , "#"
+                    %li
+                      = link_to "モータースポーツ" , "#"
+                    %li
+                      = link_to "ウィンタースポーツ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "演劇/芸能" , "#"
+                  %ul
+                    %li
+                      = link_to "ミュージカル" , "#"
+                    %li
+                      = link_to "演劇" , "#"
+                    %li
+                      = link_to "伝統芸能" , "#"
+                    %li
+                      = link_to "落語" , "#"
+                    %li
+                      = link_to "お笑い" , "#"
+                    %li
+                      = link_to "オペラ" , "#"
+                    %li
+                      = link_to "サーカス" , "#"
+                    %li
+                      = link_to "バレエ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "イベント" , "#"
+                  %ul
+                    %li
+                      = link_to "声優/アニメ" , "#"
+                    %li
+                      = link_to "キッズ/ファミリー" , "#"
+                    %li
+                      = link_to "トークショー/講演会" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "映画" , "#"
+                  %ul
+                    %li
+                      = link_to "邦画" , "#"
+                    %li
+                      = link_to "洋画" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "施設利用券" , "#"
+                  %ul
+                    %li
+                      = link_to "遊園地/テーマパーク" , "#"
+                    %li
+                      = link_to "美術館/博物館" , "#"
+                    %li
+                      = link_to "スキー場" , "#"
+                    %li
+                      = link_to "ゴルフ場" , "#"
+                    %li
+                      = link_to "フィットネスクラブ" , "#"
+                    %li
+                      = link_to "プール" , "#"
+                    %li
+                      = link_to "ボウリング場" , "#"
+                    %li
+                      = link_to "水族館" , "#"
+                    %li
+                      = link_to "動物園" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "優待券/割引券" , "#"
+                  %ul
+                    %li
+                      = link_to "ショッピング" , "#"
+                    %li
+                      = link_to "レストラン/食事券" , "#"
+                    %li
+                      = link_to "フード/ドリンク券" , "#"
+                    %li
+                      = link_to "宿泊券" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "その他" , "#"
+          %ul
+            %li
+              = link_to "自動車・オートバイ" , "#"
+              %ul
+                %li
+                  = link_to "自動車本体" , "#"
+                  %ul
+                    %li
+                      = link_to "国内自動車本体" , "#"
+                    %li
+                      = link_to "外国自動車本体" , "#"
+                %li
+                  = link_to "自動車タイヤ/ホイール" , "#"
+                  %ul
+                    %li
+                      = link_to "タイヤ/ホイールセット" , "#"
+                    %li
+                      = link_to "タイヤ" , "#"
+                    %li
+                      = link_to "ホイール" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "自動車パーツ" , "#"
+                  %ul
+                    %li
+                      = link_to "サスペンション" , "#"
+                    %li
+                      = link_to "ブレーキ" , "#"
+                    %li
+                      = link_to "外装/エアロパーツ" , "#"
+                    %li
+                      = link_to "ライト" , "#"
+                    %li
+                      = link_to "内装/シート" , "#"
+                    %li
+                      = link_to "ステアリング" , "#"
+                    %li
+                      = link_to "マフラー・排気系" , "#"
+                    %li
+                      = link_to "エンジン、過給機、冷却装置" , "#"
+                    %li
+                      = link_to "クラッチ、ミッション、駆動系" , "#"
+                    %li
+                      = link_to "電装品" , "#"
+                    %li
+                      = link_to "補強パーツ" , "#"
+                    %li
+                      = link_to "汎用パーツ" , "#"
+                    %li
+                      = link_to "外国自動車用パーツ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "自動車アクセサリー" , "#"
+                  %ul
+                    %li
+                      = link_to "車内アクセサリー" , "#"
+                    %li
+                      = link_to "カーナビ" , "#"
+                    %li
+                      = link_to "カーオーディオ" , "#"
+                    %li
+                      = link_to "車外アクセサリー" , "#"
+                    %li
+                      = link_to "メンテナンス用品" , "#"
+                    %li
+                      = link_to "チャイルドシート" , "#"
+                    %li
+                      = link_to "ドライブレコーダー" , "#"
+                    %li
+                      = link_to "レーダー探知機" , "#"
+                    %li
+                      = link_to "カタログ/マニュアル" , "#"
+                    %li
+                      = link_to "セキュリティ" , "#"
+                    %li
+                      = link_to "ETC" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "オートバイ車体" , "#"
+                %li
+                  = link_to "オートバイパーツ" , "#"
+                  %ul
+                    %li
+                      = link_to "タイヤ" , "#"
+                    %li
+                      = link_to "マフラー" , "#"
+                    %li
+                      = link_to "エンジン、冷却" , "#"
+                    %li
+                      = link_to "カウル、フェンダー、外装" , "#"
+                    %li
+                      = link_to "サスペンション" , "#"
+                    %li
+                      = link_to "ホイール" , "#"
+                    %li
+                      = link_to "シート" , "#"
+                    %li
+                      = link_to "ブレーキ" , "#"
+                    %li
+                      = link_to "タンク" , "#"
+                    %li
+                      = link_to "ライト、ウィンカー" , "#"
+                    %li
+                      = link_to "チェーン、スプロケット駆動系" , "#"
+                    %li
+                      = link_to "メーター" , "#"
+                    %li
+                      = link_to "電装系" , "#"
+                    %li
+                      = link_to "ミラー" , "#"
+                    %li
+                      = link_to "外国オートバイ用パーツ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "オートバイアクセサリー" , "#"
+                  %ul
+                    %li
+                      = link_to "ヘルメット/シールド" , "#"
+                    %li
+                      = link_to "バイクウエア/装備" , "#"
+                    %li
+                      = link_to "アクセサリー" , "#"
+                    %li
+                      = link_to "メンテナンス" , "#"
+                    %li
+                      = link_to "カタログ/マニュアル" , "#"
+                    %li
+                      = link_to "その他" , "#"
+          %ul
+            %li
+              = link_to "その他" , "#"
+              %ul
+                %li
+                  = link_to "まとめ売り" , "#"
+                %li
+                  = link_to "ペット用品" , "#"
+                  %ul
+                    %li
+                      = link_to "ペットフード" , "#"
+                    %li
+                      = link_to "犬用品" , "#"
+                    %li
+                      = link_to "猫用品" , "#"
+                    %li
+                      = link_to "魚用品/草類" , "#"
+                    %li
+                      = link_to "小動物用品" , "#"
+                    %li
+                      = link_to "爬虫類/両生類用品" , "#"
+                    %li
+                      = link_to "かご/おり" , "#"
+                    %li
+                      = link_to "鳥用品" , "#"
+                    %li
+                      = link_to "虫類用品" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "食品" , "#"
+                  %ul
+                    %li
+                      = link_to "菓子" , "#"
+                    %li
+                      = link_to "米" , "#"
+                    %li
+                      = link_to "野菜" , "#"
+                    %li
+                      = link_to "果物" , "#"
+                    %li
+                      = link_to "調味料" , "#"
+                    %li
+                      = link_to "魚介類(加工食品)" , "#"
+                    %li
+                      = link_to "肉類(加工食品)" , "#"
+                    %li
+                      = link_to "その他 加工食品" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "飲料/酒" , "#"
+                  %ul
+                    %li
+                      = link_to "コーヒー" , "#"
+                    %li
+                      = link_to "ソフトドリンク" , "#"
+                    %li
+                      = link_to "ミネラルウォーター" , "#"
+                    %li
+                      = link_to "茶" , "#"
+                    %li
+                      = link_to "ウイスキー" , "#"
+                    %li
+                      = link_to "ワイン" , "#"
+                    %li
+                      = link_to "ブランデー" , "#"
+                    %li
+                      = link_to "焼酎" , "#"
+                    %li
+                      = link_to "日本酒" , "#"
+                    %li
+                      = link_to "ビール/発泡酒" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "用品/生活雑貨/旅行" , "#"
+                  %ul
+                    %li
+                      = link_to "タオル/バス用品" , "#"
+                    %li
+                      = link_to "日用品/生活雑貨" , "#"
+                    %li
+                      = link_to "洗剤/柔軟剤" , "#"
+                    %li
+                      = link_to "旅行用品" , "#"
+                    %li
+                      = link_to "防災関連グッズ" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "アンティーク/コレクション" , "#"
+                  %ul
+                    %li
+                      = link_to "雑貨" , "#"
+                    %li
+                      = link_to "工芸品" , "#"
+                    %li
+                      = link_to "家具" , "#"
+                    %li
+                      = link_to "" , "#"
+                    %li
+                      = link_to "印刷物" , "#"
+                %li
+                  = link_to "文房具/事務用品" , "#"
+                  %ul
+                    %li
+                      = link_to "筆記具" , "#"
+                    %li
+                      = link_to "ノート/メモ帳" , "#"
+                    %li
+                      = link_to "テープ/マスキングテープ" , "#"
+                    %li
+                      = link_to "カレンダー/スケジュール" , "#"
+                    %li
+                      = link_to "アルバム/スクラップ" , "#"
+                    %li
+                      = link_to "ファイル/バインダー" , "#"
+                    %li
+                      = link_to "はさみ/カッター" , "#"
+                    %li
+                      = link_to "カードホルダー/名刺管理" , "#"
+                    %li
+                      = link_to "のり/ホッチキス" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "事務/店舗用品" , "#"
+                  %ul
+                    %li
+                      = link_to "オフィス用品一般" , "#"
+                    %li
+                      = link_to "オフィス家具" , "#"
+                    %li
+                      = link_to "店舗用品" , "#"
+                    %li
+                      = link_to "OA機器" , "#"
+                    %li
+                      = link_to "ラッピング/包装" , "#"
+                    %li
+                      = link_to "その他" , "#"
+                %li
+                  = link_to "その他" , "#"
+        %li.left-item
+          = link_to "ブランド", "#", class: "item-btn"
+          - Brand.all.each do |brand|
+            - unless brand.name.empty?
+              %ul
+                %li
+                  = link_to "#{brand.name}" , "#"
+      %ul.right-items
+        - if user_signed_in?
+          %li.right-item-log
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li.right-item-new
+            = link_to "マイページ" , user_path(current_user)
+        - else 
+          %li.right-item-log
+            = link_to "ログイン" , new_user_session_path
+          %li.right-item-new
+            = link_to "新規会員登録" , new_user_registration_path
