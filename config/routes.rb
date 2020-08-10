@@ -25,6 +25,6 @@ Rails.application.routes.draw do
       get 'search_category_children'
       get 'search_category_grandchildren'
     end
-    resources :comments
+    resources :comments,only:[:create,:destroy]
   end
 end
