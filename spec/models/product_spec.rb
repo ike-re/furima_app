@@ -186,4 +186,30 @@ describe Product do
       expect(product.errors[:category]).to include("を入力してください")
     end
   end
+
+  describe "#search" do
+    let(:product) { create(:product) }
+    let(:category) { create(:category) }
+    before do
+      category
+      product
+    end
+
+    it "returns product" do
+      expect(Product.search("a")).to include(product)
+    end
+
+    it "is not return product" do
+      other_product = create(:product, name: "b")
+      expect(Product.search("a")).to_not include(other_product)
+    end
+
+    it "is return all_product" do
+      expect(Product.search("")).to include(product)
+    end
+
+    it "is return empty" do
+      expect(Product.search("b")).to be_empty
+    end
+  end
 end

@@ -1,0 +1,33 @@
+%header.header-index
+  = render 'shared/header'
+.products-search__wrapper
+  .products-search__wrapper__sidebar
+    .products-search__wrapper__sidebar__sort-box
+    .products-search__wrapper__sidebar__search-group
+      .products-search__wrapper__sidebar__search-group__field
+  .products-search__wrapper__main
+    .products-search__wrapper__main__heading
+      %h2
+        - if params[:keyword].present?
+          %span.search_keyword
+            = params[:keyword]
+          の検索結果
+        - else
+          %span.search_keyword
+          検索結果
+    .products-search__wrapper__main__contents
+      - @products.each do |product|
+        .products-search__wrapper__main__contents__product-prev
+          .products-search__wrapper__main__contents__product-prev__img
+            = image_tag product.photos.first.image.url
+            %span
+              = "¥#{product.price}"
+          .products-search__wrapper__main__contents__product-prev__name
+            %p
+              = product.name
+            .products-search__wrapper__main__contents__product-prev__name__favorite
+              %span
+                = icon('fa', 'heart')
+                1
+    .products-search__wrapper__main__pagination
+      = paginate @products

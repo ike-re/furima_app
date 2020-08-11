@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get 'paid'
       get 'search_category_children'
       get 'search_category_grandchildren'
+      get 'search'
     end
     resources :comments,only:[:create,:destroy]
   end

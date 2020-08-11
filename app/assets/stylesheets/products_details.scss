@@ -92,6 +92,35 @@
               }
             }
           }
+          .anyBtn-purchase {
+            margin-top: 30px;
+            &__link {
+              background-color: $color_item3;
+              padding: 15px;
+              border-radius: 15px;
+              text-decoration: none;
+              color: white;
+              font-weight: bold;
+              &__delete {
+                background-color: red;
+                padding: 15px;
+                margin-left: 1rem;
+                border-radius: 15px;
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+              }
+            }
+            &__sold {
+              background-color: $color_item3;
+              padding: 15px;
+              @include border();
+              border-radius: 15px;
+              text-decoration: none;
+              color: white;
+              font-weight: bold;
+            }
+          }
         }
         .commentBox{
           padding: 24px;
