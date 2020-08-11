@@ -98,16 +98,27 @@
           margin: 10px 0;
           background-color: $color_item1;
           text-align: center;
+          .one-block{
+            display: flex;
+          }
+          .item-comment{
+            padding: 16px;
+            background:$color_item2;
+            border-radius: 15px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+          }
           &__comment{
             width: 100%;
             min-height: 104px;
             padding: 10px;
+            margin-bottom: 28px;
           }
           &__noticeMsg{
             padding: 8px;
             font-size: 14px;
             background-color: $color_item2;
-            margin-top: 10px;
+            margin-top: 28px;
             margin-bottom: 28px;
             text-align: left;
           }

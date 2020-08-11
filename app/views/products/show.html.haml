@@ -100,15 +100,25 @@
             = link_to '編集', edit_product_path(@product)
             = link_to '削除', product_path(@product), method: :delete
         .commentBox
-          %textarea.commentBox__comment
+          %h4 【 コメント一覧 】
+          .commentBlock
+            - if @product.comments
+              - @product.comments.each do |comment|
+                .one-block
+                  =comment.user.nickname
+                .item-comment
+                  = simple_format(comment.comment)
           %p.commentBox__noticeMsg
             相手のことを考え丁寧なコメントを心がけましょう。
             %br/
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
             %br/
-          %button.commentBox__btn
-            %i.fa.fa-comment
-              コメントする
+          - if current_user
+            = form_for [@product,@comment] do |chat|
+              =chat.text_area :comment,class:"commentBox__comment"
+              =chat.submit 'コメントする',class:"commentBox__btn"
+          - else
+            コメントはできません
       .show__links
         %ul.linksPage
           %li.before
