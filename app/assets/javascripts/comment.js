@@ -28,5 +28,9 @@ $(function () {
         $('#new_comment')[0].reset();
         $('input').prop('disabled', false);
       })
+      .fail(function() {
+        alert("メッセージ送信に失敗しました");
+        $('.commentBox__btn').prop('disabled', false);
+      });
   });
 });
