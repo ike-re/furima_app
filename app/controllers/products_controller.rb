@@ -16,6 +16,8 @@ class ProductsController < ApplicationController
     @parent = @child.parent
     @parent_category_products = @products.select { |product| product.category.parent.parent.name == @parent.name }
     @user = current_user
+    @comment =Comment.new
+    @comments =@product.comments.includes(:user).all
   end
 
   def new
