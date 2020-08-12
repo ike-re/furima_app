@@ -1,6 +1,10 @@
 .header
   = render 'shared/header'
 
+.breadCrumb-nav
+  - breadcrumb :products_show
+  = breadcrumbs separator: " &rsaquo; ", class: "breadCrumb-nav__list"
+
 .main
   .main__show
     .show__contents
@@ -143,7 +147,7 @@
                   後ろの商品
                   %i.fa.fa-angle-right
       .relatedItem
-        = link_to "#{@parent.name}をもっと見る", '#', class: 'relatedItem__watch'
+        = link_to "#{@grandchild.name}をもっと見る", '#', class: 'relatedItem__watch'
         .productLists
           - if @parent_category_products.present?
             - @parent_category_products.each do |product|

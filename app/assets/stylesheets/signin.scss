@@ -17,9 +17,10 @@
       width: 380px;
       height: 600px;
       margin: auto;
+      margin-top: 30px;
 
       &__title {
-        height: 30px;
+        height: 60px;
         font-size: 20px;
         text-align: center;
         border-bottom: 1px $color_item2 solid;

@@ -1,3 +1,6 @@
+.breadCrumb-nav
+  - breadcrumb :mypage
+  = breadcrumbs separator: " &rsaquo; ", class: "breadCrumb-nav__list"
 .wrapper
   .wrapper__Left
     .Title
@@ -13,7 +16,7 @@
         - if @card.blank?
           = link_to 'クレジットカードの登録', new_credit_card_path, class: "ItemLeft__credit"
         - else
-          = link_to 'クレジットカードの詳細', credit_card_path(@card)
+          = link_to 'クレジットカードの詳細', credit_card_path(@card), class: "ItemLeft__credit"
       %li.ItemLeft
         = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "ItemLeft__logout"
   .wrapper__Right

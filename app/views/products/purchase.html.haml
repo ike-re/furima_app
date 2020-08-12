@@ -1,6 +1,11 @@
 .ProductsPurchase
   %header.ProductsNew__header
     = link_to image_tag('logo.png'), products_path
+    
+  .breadCrumb-nav
+    - breadcrumb :products_purchase
+    = breadcrumbs separator: " &rsaquo; ", class: "breadCrumb-nav__list"
+
   .ProductsPurchase__main
 
     .ProductsPurchase__main__group

@@ -15,12 +15,13 @@
       margin: 50px auto;
       padding-bottom: 50px;
       &__title {
-        height: 30px;
+        height: 60px;
         font-size: 20px;
         text-align: center;
         border-bottom: 1px $color_item2 solid;
         padding: 15px;
         font-weight: bolder;
+        margin-bottom: 30px;
       }
       &__form {
         height: 100%;

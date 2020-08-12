@@ -1,3 +1,10 @@
+.header
+  = render 'shared/header'
+
+.breadCrumb-nav
+  - breadcrumb :card
+  = breadcrumbs separator: " &rsaquo; ", class: "breadCrumb-nav__list"
+
 .SignupCard
   .SignupCard__box
     .SignupCard__box__body

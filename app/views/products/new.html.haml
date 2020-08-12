@@ -1,6 +1,10 @@
 .ProductsNew
   .ProductsNew__header
     = link_to image_tag('logo.png'), products_path
+  .breadCrumb-nav
+    - breadcrumb :products_new
+    = breadcrumbs separator: " &rsaquo; ", class: "breadCrumb-nav__list"
+
   .ProductsNew__main
     = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
       = render 'devise/shared/error_messages', resource: @product
