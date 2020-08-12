@@ -3,7 +3,7 @@ class DeliverAddress < ApplicationRecord
             :house_number, :destination_first_name,
             :destination_family_name, :destination_first_name_kana,
             :destination_family_name_kana, presence: true
-  validates :phone_number,                 uniqueness: { case_sensitive: false }
+  validates :phone_number,                 uniqueness: { case_sensitive: false }, allow_nil: true
   validates :phone_number,                 format: { with: /\A(\d{10,11})?\z/}
   validates :post_code,                    format: { with: /\A\d{7}\z/ }
   validates :destination_first_name, :destination_family_name,

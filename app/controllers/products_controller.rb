@@ -18,11 +18,9 @@ class ProductsController < ApplicationController
       @next_product = Product.next_search(@product)
     end
     @grandchild = Category.find(@product.category_id)
-    if @grandchild.ancestors?
-      @child = @grandchild.parent
-      @parent = @child.parent
-      @parent_category_products = @products.select { |product| product.category.root.name == @parent.name }
-    end
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @parent_category_products = @products.select { |product| product.category.root.name == @parent.name }
     @user = current_user
     @comment =Comment.new
     @comments =@product.comments.includes(:user).all
@@ -47,9 +45,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    unless @product.brand.valid?
-      @product.brand.destroy
-    end
+    @product.brand.destroy if product_params[:brand_attributes][:name].blank?
+    @product.category_id = nil if @product.category && @product.category.children?
     unless @product.valid?
       flash.now[:alert] = @product.errors.full_messages
       @parents = Category.set_parents
@@ -62,6 +59,11 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @grandchild = Category.find(@product.category_id)
+    category =  Category.find_by(id: product_params[:category_id])
+    if category && category.children?
+      product_params[:category_id] = nil
+    end
     brand_name = params[:product][:brand_attributes][:name]
     unless brand_name.empty?
       if @product.update(product_params)
@@ -77,7 +79,6 @@ class ProductsController < ApplicationController
       else
         flash.now[:alert] = @product.errors.full_messages
         @parents = Category.set_parents
-        @grandchild = Category.find(@product.category_id)
         @child = @grandchild.parent
         @parent = @child.parent
         @grandchildren = @child.children
@@ -109,7 +110,6 @@ class ProductsController < ApplicationController
       else
         flash.now[:alert] = @product.errors.full_messages
         @parents = Category.set_parents
-        @grandchild = Category.find(@product.category_id)
         @child = @grandchild.parent
         @parent = @child.parent
         @grandchildren = @child.children
