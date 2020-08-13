@@ -129,7 +129,6 @@ $(function() {
   });
 
   $(document).on('change', '#search_category_child', function() {
-    console.log("hoge");
     let childValue = $(this).val();
     $.ajax( {
       url: '/products/search_category_grandchildren',
