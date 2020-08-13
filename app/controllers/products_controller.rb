@@ -190,33 +190,34 @@ class ProductsController < ApplicationController
 
   def search
     @parents = Category.set_parents
+    # binding.pry
     if params[:keyword]
       params[:q] = { sorts: 'id desc' }
       @search = Product.ransack()
-      @products = Product.key_search(params[:keyword]).page(params[:page])
+      @products = Product.key_search(params[:keyword]).page(params[:page]).order(params[:q][:sorts])
     else
       if params[:q].present?
         if search_params[:category_id_in].present?
           @search = Product.ransack(search_params)
-          @products = @search.result.page(params[:page])
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
         elsif params[:product] && Category.find_by(id: product_params[:category_id]).present?
           category_id_hash = { category_id_in: Category.find(product_params[:category_id]).child_ids }
           search_params = params[:q].merge(category_id_hash)
           @search = Product.ransack(search_params)
-          @products = @search.result.page(params[:page])
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
         elsif Category.find_by(id: params[:q][:category_id]).present?
           category_id_hash = { category_id_in: Category.find(params[:q][:category_id]).indirect_ids }
           search_params = params[:q].merge(category_id_hash)
           @search = Product.ransack(search_params)
-          @products = @search.result.page(params[:page])
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
         else
           @search = Product.ransack(search_params)
-          @products = @search.result.page(params[:page])
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
         end
       else
         params[:q] = { sorts: 'id desc' }
         @search = Product.ransack()
-        @products = Product.all.page(params[:page])
+        @products = Product.all.page(params[:page]).order(params[:q][:sorts])
       end
     end
   end
