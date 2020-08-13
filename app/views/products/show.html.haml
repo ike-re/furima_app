@@ -115,7 +115,7 @@
         .commentBox
           %h4 【 コメント一覧 】
           .commentBlock
-            - if @product.comments
+            - if @product.comments.exists?
               - @product.comments.each do |q|
                 .commentType
                   .one-block
