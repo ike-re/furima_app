@@ -116,18 +116,19 @@
           %h4 【 コメント一覧 】
           .commentBlock
             - if @product.comments
-              - @product.comments.each do |comment|
-                .one-block
-                  =comment.user.nickname
-                .item-comment
-                  = simple_format(comment.comment)
+              - @product.comments.each do |q|
+                .commentType
+                  .one-block
+                    =q.user.nickname
+                  .item-comment
+                    = simple_format(q.comment)
           %p.commentBox__noticeMsg
             相手のことを考え丁寧なコメントを心がけましょう。
             %br/
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
             %br/
           - if current_user
-            = form_for [@product,@comment] do |chat|
+            = form_for [@product,@comment],local: true, id: "new_comment" do |chat|
               =chat.text_area :comment,class:"commentBox__comment"
               =chat.submit 'コメントする',class:"commentBox__btn"
           - else

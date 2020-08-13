@@ -4,9 +4,9 @@ $(function () {
                   <div class="one-block">
                     ${comment.nickname}
                   </div>
-                    <div class="item-comment">
-                     ${comment.comment}
-                    </div>    
+                  <div class="item-comment">
+                    ${comment.comment}
+                  </div>    
                 </div >`
     return html;
   }
@@ -24,7 +24,7 @@ $(function () {
     })
       .done(function (data) {
         var html = buildHTML(data);
-        $('.commentBlock').append(html);
+        $('.commentType').append(html);
         $('#new_comment')[0].reset();
         $('input').prop('disabled', false);
       })
