@@ -71,7 +71,7 @@
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |product|references|null: false, foreign_key: true|
-|text|text|null: false|
+|comment|text|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :product
