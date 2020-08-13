@@ -2,9 +2,84 @@
   = render 'shared/header'
 .products-search__wrapper
   .products-search__wrapper__sidebar
-    .products-search__wrapper__sidebar__sort-box
-    .products-search__wrapper__sidebar__search-group
-      .products-search__wrapper__sidebar__search-group__field
+    = search_form_for @search, url: search_products_path, class: "products-search__wrapper__sidebar__form" do |f|
+      .products-search__wrapper__sidebar__form__sort
+        = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' }, { selected: params[:q][:sorts] }, { onchange: 'this.form.submit()'} )
+      .products-search__wrapper__sidebar__form__search-group
+        .products-search__wrapper__sidebar__form__search-group__title
+          %p 詳細検索
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'plus')
+              キーワードを追加する
+          .products-search__wrapper__sidebar__form__search-group__field__input
+            = f.text_field :name_cont, { class: "products-search__wrapper__sidebar__form__search-group__field__input__text" }
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'list')
+              カテゴリーを選択する
+          .products-search__wrapper__sidebar__form__search-group__field__input
+            = f.collection_select :category_id, @parents, :id, :name, {prompt: 'すべて'}, {id: 'search_category_parent'}
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'tag')
+              ブランド名から探す
+          .products-search__wrapper__sidebar__form__search-group__field__input
+            = f.search_field :brand_name_cont, { placeholder: '例) シャネル', class: "products-search__wrapper__sidebar__form__search-group__field__input__text" }
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'expand')
+              サイズを指定する
+          .products-search__wrapper__sidebar__form__search-group__field__input
+            = f.collection_select :size_id_eq, Size.all, :id, :name, prompt: 'すべて'
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'coins')
+              価格
+          .products-search__wrapper__sidebar__form__search-group__field__input
+            = select_tag :price_range, options_for_select([['選択してください', ''], ['300 ~ 1000', '1'], ['1000 ~ 5000', '2'], ['5000 ~ 10000', '3'], ['10000 ~ 30000', '4'], ['30000 ~ 50000', '5'], ['50000 ~', '6']])
+            .products-search__wrapper__sidebar__form__search-group__field__input__number
+              = f.number_field :price_gteq, placeholder: "¥ Min"
+              %span ~
+              = f.number_field :price_lteq, placeholder: "¥ Max"
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'star')
+              商品の状態
+          .products-search__wrapper__sidebar__form__search-group__field__checkbox
+            = check_box_tag :condition_id_all
+            = label_tag :condition_id_all, 'すべて'
+            = f.collection_check_boxes :condition_id_in, Condition.all, :id, :name, {include_hidden: false}, class: "condition_checkbox"
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'truck')
+              配送料の負担
+          .products-search__wrapper__sidebar__form__search-group__field__checkbox
+            = check_box_tag :postage_payer_id_all
+            = label_tag :postage_payer_id_all, 'すべて'
+            = f.collection_check_boxes :postage_payer_id_in, PostagePayer.all, :id, :name, {include_hidden: false}, class: "postage_payer_checkbox"
+        .products-search__wrapper__sidebar__form__search-group__field
+          .products-search__wrapper__sidebar__form__search-group__field__title
+            %p
+              = icon('fa', 'cart-arrow-down')
+              販売状況
+          .products-search__wrapper__sidebar__form__search-group__field__checkbox
+            = check_box_tag :trading_status_all
+            = label_tag :trading_status_all, 'すべて'
+            = check_box_tag "q[trading_status_in][]", 1, false, { class: "trading_checkbox", id: "trading_status_in_1" }
+            = label_tag :trading_status_in_1, '販売中'
+            = check_box_tag "q[trading_status_in][]", 2, false, { class: "trading_checkbox", id: "trading_status_in_2" }
+            = label_tag :trading_status_in_2, '売り切れ'
+        .products-search__wrapper__sidebar__form__search-group__button-field
+          %span#clear_button クリア
+          = f.submit '完了'
   .products-search__wrapper__main
     .products-search__wrapper__main__heading
       %h2
@@ -18,6 +93,7 @@
     .products-search__wrapper__main__contents
       - @products.each do |product|
         .products-search__wrapper__main__contents__product-prev
+          = link_to '', product_path(product)
           .products-search__wrapper__main__contents__product-prev__img
             = image_tag product.photos.first.image.url
             %span
