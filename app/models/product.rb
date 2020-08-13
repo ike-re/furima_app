@@ -19,7 +19,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :prep_date
   accepts_nested_attributes_for :photos, allow_destroy: true
   accepts_nested_attributes_for :brand
-  scope :search, -> (search) { Product.where('name LIKE(?)', "%#{search}%") }
+  scope :key_search, -> (search) { Product.where('name LIKE(?)', "%#{search}%") }
   scope :prev_search, -> (product) { Product.where("id < ?", product.id).last }
   scope :next_search, -> (product) { Product.where("id > ?", product.id).first }
   enum prefecture_code: {
