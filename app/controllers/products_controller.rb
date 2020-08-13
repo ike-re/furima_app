@@ -190,7 +190,6 @@ class ProductsController < ApplicationController
 
   def search
     @parents = Category.set_parents
-    # binding.pry
     if params[:keyword]
       params[:q] = { sorts: 'id desc' }
       @search = Product.ransack()
