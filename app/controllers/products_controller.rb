@@ -180,7 +180,7 @@ class ProductsController < ApplicationController
       unless @product.buyer_id.nil?
         redirect_to purchase_product_path(@product) and return
       end
-      @product.update(buyer_id: current_user.id)
+      @product.update(buyer_id: current_user.id, trading_status: 2)
       Payjp::Charge.create(
         :amount => @product.price, 
         :customer => @card.customer_id,
@@ -191,8 +191,36 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search(params[:keyword]).page(params[:page])
     @parents = Category.set_parents
+    if params[:keyword]
+      params[:q] = { sorts: 'id desc' }
+      @search = Product.ransack()
+      @products = Product.key_search(params[:keyword]).page(params[:page]).order(params[:q][:sorts])
+    else
+      if params[:q].present?
+        if search_params[:category_id_in].present?
+          @search = Product.ransack(search_params)
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
+        elsif params[:product] && Category.find_by(id: product_params[:category_id]).present?
+          category_id_hash = { category_id_in: Category.find(product_params[:category_id]).child_ids }
+          search_params = params[:q].merge(category_id_hash)
+          @search = Product.ransack(search_params)
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
+        elsif Category.find_by(id: params[:q][:category_id]).present?
+          category_id_hash = { category_id_in: Category.find(params[:q][:category_id]).indirect_ids }
+          search_params = params[:q].merge(category_id_hash)
+          @search = Product.ransack(search_params)
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
+        else
+          @search = Product.ransack(search_params)
+          @products = @search.result.page(params[:page]).order(params[:q][:sorts])
+        end
+      else
+        params[:q] = { sorts: 'id desc' }
+        @search = Product.ransack()
+        @products = Product.all.page(params[:page]).order(params[:q][:sorts])
+      end
+    end
   end
 
   private
@@ -203,7 +231,15 @@ class ProductsController < ApplicationController
                                       :closed_deal_date, :category_id,
                                       photos_attributes:[:image, :product_id],
                                       brand_attributes:[:name]
-                                     ).merge(seller_id: current_user.id)
+                                    ).merge(seller_id: current_user.id)
+    end
+
+    def search_params
+      params.require(:q).permit(:sorts, :name_cont, :brand_name_cont,
+                                :size_id_eq, :price_gteq, :price_lteq,
+                                trading_status_in: [], condition_id_in: [],
+                                postage_payer_id_in: [], category_id_in: []
+                                )
     end
 
     def find_product
